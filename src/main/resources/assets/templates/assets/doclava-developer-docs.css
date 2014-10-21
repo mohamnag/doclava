@@ -4,6 +4,18 @@
 
 @import url("doclava-developer-core.css");
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	text-decoration: underline;
+}
+
 #title {
   border-bottom: 4px solid #ccc;
   display:none;
@@ -314,10 +326,20 @@
 
 /* extra space between end of method name and open-paren */
 .sympad {
-  margin-right: 2px;
   font-weight: bold;
+  color: #0099CF;
+  margin-right: 2px;
   font-family: Consolas;
   font-size: 18px;
+}
+
+.sympad a {
+  color: #0099CF;
+}
+
+.sympad a:hover {
+	color: #FE8817;
+	text-decoration: none;
 }
 
 /* right alignment for the return type in sumtable */
