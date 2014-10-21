@@ -1,0 +1,39 @@
+apply plugin: 'java'
+
+ext.libs = "$buildDir/classes-libs"
+
+sourceCompatibility = '1.6'
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+	options.warnings = false
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile files(System.env["JAVA_HOME"] + "/lib/tools.jar")
+	compile 'com.google.guava:guava:18.0'
+	compile 'com.google.jsilver:jsilver:1.0.0'
+}
+
+jar {
+	dependsOn 'unZip'
+	from libs
+}
+
+task unZip {
+	outputs.dir file(libs)
+	doLast {
+		configurations.compile.each { lib ->
+			if (lib.name != 'tools.jar') {
+				copy {
+					from zipTree(lib)
+					into libs
+				}
+			}
+		}
+	}
+}
