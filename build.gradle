@@ -1,7 +1,11 @@
 apply plugin: 'java'
 
-ext.libs = "$buildDir/classes-libs"
+ext {
+	artifact = "D:/Bin"
+	libs = "$buildDir/classes-libs"
+}
 
+version = '1.0.6'
 sourceCompatibility = '1.6'
 
 tasks.withType(JavaCompile) {
@@ -34,6 +38,15 @@ task unZip {
 					into libs
 				}
 			}
+		}
+	}
+}
+
+uploadArchives {
+	repositories {
+		flatDir {
+			name "artifact"
+			dir artifact
 		}
 	}
 }
