@@ -16,7 +16,7 @@ gradle build
 
 This will build a jar in build/libs which is the artifact.
 
-Once you have the artifact, run `javadoc` common with the `-doclet` and `-docletpath`(if not in classpath) options to generate javadocs, for example:
+Once you have the artifact, run `javadoc` command with the `-doclet` and `-docletpath`(if not in classpath) options to generate javadocs, for example:
 
 <code>
 javadoc -encoding UTF-8 -sourcepath src -d docs -subpackages project.package -doclet com.google.doclava.Doclava -docletpath doclava.jar -generatesources -project.name MyProject
