@@ -62,7 +62,7 @@ def:custom_left_nav() ?>
             scrollIntoView("classes-nav");
           });
         }
-        $("#swapper").css({borderBottom:"2px solid #aaa"});
+        //$("#swapper").css({borderBottom:"2px solid #aaa"});
       } else {
         swapNav(); // tree view should be used on mobile
       }

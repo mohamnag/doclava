@@ -91,7 +91,8 @@ function restoreWidth(navWidth) {
 
 function restoreHeight(packageHeight) {
   var windowHeight = ($(window).height() - HEADER_HEIGHT);
-  var swapperHeight = windowHeight - 13;
+  //var swapperHeight = windowHeight - 13;
+  var swapperHeight = windowHeight;
   $("#swapper").css({height:swapperHeight + "px"});
   sidenav.css({height:windowHeight + "px"});
   content.css({height:windowHeight + "px"});
@@ -234,7 +235,8 @@ function highlightNav(fullPageName) {
  * and save the new size to a cookie */
 function resizePackagesHeight() {
   var windowHeight = ($(window).height() - HEADER_HEIGHT);
-  var swapperHeight = windowHeight - 13; // move 13px for swapper link at the bottom
+  //var swapperHeight = windowHeight - 13; // move 13px for swapper link at the bottom
+  var swapperHeight = windowHeight;
   resizePackagesNav.css({maxHeight:swapperHeight + "px"});
   classesNav.css({height:swapperHeight - parseInt(resizePackagesNav.css("height")) + "px"});
 
@@ -258,7 +260,8 @@ function resizeHeight() {
   var href = location.href;
   // If in the reference docs, also resize the "swapper", "classes-nav", and "nav-tree"  divs
   if (href.indexOf("/reference/") != -1) {
-    var swapperHeight = windowHeight - 13;
+    //var swapperHeight = windowHeight - 13;
+    var swapperHeight = windowHeight;
     $("#swapper").css({height:swapperHeight + "px"});
     $("#classes-nav").css({height:swapperHeight - parseInt(resizePackagesNav.css("height")) + "px"});
     $("#nav-tree").css({height:swapperHeight + "px"});
