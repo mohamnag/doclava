@@ -23,3 +23,7 @@ javadoc -encoding UTF-8 -sourcepath src -d docs -subpackages project.package -do
 </code>
 
 More details please refer to [official site](https://code.google.com/p/doclava/).
+
+Here is a screenshot
+
+![Doclava](screenshot.png)
