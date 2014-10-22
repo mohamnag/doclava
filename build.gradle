@@ -1,6 +1,9 @@
 apply plugin: 'java'
 
-ext.libs = "$buildDir/classes-libs"
+ext {
+	LibClassesDir = "$buildDir/libclasses"
+	LocalArtifactDir = "D:/Lib/doclava"
+}
 
 version = '1.0.6'
 sourceCompatibility = '1.6'
@@ -21,18 +24,27 @@ dependencies {
 }
 
 jar {
-	dependsOn 'unZip'
-	from libs
+	dependsOn 'unzip'
+	from LibClassesDir
 }
 
-task unZip {
-	outputs.dir file(libs)
+uploadArchives {
+	repositories {
+		flatDir {
+			name 'LocalArtifactDir'
+			dir LocalArtifactDir
+		}
+	}
+}
+
+task unzip {
+	outputs.dir file(LibClassesDir)
 	doLast {
 		configurations.compile.each { lib ->
 			if (lib.name != 'tools.jar') {
 				copy {
 					from zipTree(lib)
-					into libs
+					into LibClassesDir
 				}
 			}
 		}
