@@ -6,7 +6,7 @@ Doclava is a new javadoc doclet which is written by Google and used for Android 
 This project is forked from https://code.google.com/p/doclava/, and with a few style modification.
 
 ## How to build
-The [official site](https://code.google.com/p/doclava/) has binary downloads offered(or you can download it from [here](releases)).
+The [official site](https://code.google.com/p/doclava/) has binary downloads offered(or you can download it from [here](https://github.com/wf2030/doclava/releases)).
 
 We use [Gradle](http://www.gradle.org/) to build this project.
 
