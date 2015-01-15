@@ -1,4 +1,5 @@
 # Packaged files
+*.jar
 *.ear
 *.war
 

@@ -5,8 +5,12 @@ ext {
 	LocalArtifactDir = "D:/Lib/doclava"
 }
 
+group = 'org.knight.doclava'
+archivesBaseName = 'doclava'
 version = '1.0.6'
+
 sourceCompatibility = '1.6'
+targetCompatibility = '1.6'
 
 tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
@@ -24,7 +28,7 @@ dependencies {
 }
 
 jar {
-	dependsOn 'unzip'
+	dependsOn 'unzipLibraries'
 	from LibClassesDir
 }
 
@@ -37,7 +41,7 @@ uploadArchives {
 	}
 }
 
-task unzip {
+task unzipLibraries {
 	outputs.dir file(LibClassesDir)
 	doLast {
 		configurations.compile.each { lib ->
