@@ -32,7 +32,7 @@
 
     <?cs each:pkg = docs.packages ?>
         <?cs var:pkg.since.key ?>
-        <a href="<?cs var:toroot ?><?cs var:pkg.link ?>" class="w3-padding" ><?cs var:pkg.name ?></a>
+        <a href="<?cs var:toroot ?><?cs var:pkg.link ?>" class="w3-padding" ><?cs var:pkg.shortName ?></a>
     <?cs /each ?>
 
 </nav>
@@ -47,7 +47,7 @@
     <ul class="w3-ul w3-hoverable">
         <?cs each:pkg = docs.packages ?>
         <li>
-            <?cs call:package_link(pkg) ?>
+            <a href="<?cs var:toroot ?><?cs var:pkg.link ?>"><?cs var:pkg.name ?></a>
             <?cs if:pkg.since.key ?>[since <?cs var:pkg.since.key ?> ]<?cs /if ?>
             <?cs call:tag_list(pkg.shortDescr) ?>
         </li>
