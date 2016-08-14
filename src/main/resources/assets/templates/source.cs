@@ -75,7 +75,6 @@
 
 </div><!-- end doc-content -->
 
-<?cs include:"trailer.cs" ?>
 
 </body>
 </html>

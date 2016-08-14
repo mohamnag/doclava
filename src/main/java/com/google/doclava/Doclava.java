@@ -22,34 +22,15 @@ import com.google.clearsilver.jsilver.resourceloader.ClassResourceLoader;
 import com.google.clearsilver.jsilver.resourceloader.CompositeResourceLoader;
 import com.google.clearsilver.jsilver.resourceloader.FileSystemResourceLoader;
 import com.google.clearsilver.jsilver.resourceloader.ResourceLoader;
-
-import java.util.*;
-import java.util.jar.JarFile;
-import java.lang.reflect.Proxy;
-import com.sun.javadoc.ClassDoc;
-import com.sun.javadoc.Doc;
-import com.sun.javadoc.DocErrorReporter;
-import com.sun.javadoc.LanguageVersion;
-import com.sun.javadoc.MemberDoc;
-import com.sun.javadoc.RootDoc;
+import com.sun.javadoc.*;
 import com.sun.javadoc.Type;
 
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.lang.reflect.Array;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.io.*;
+import java.lang.reflect.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.*;
+import java.util.jar.JarFile;
 
 public class Doclava {
   private static final String SDK_CONSTANT_ANNOTATION = "android.annotation.SdkConstant";
@@ -95,7 +76,7 @@ public class Doclava {
   private static boolean parseComments = false;
   public static String apiVersion = null;
   private static String yamlNavFile = null;
-  
+
   public static JSilver jSilver = null;
 
   public static boolean checkLevel(int level) {
@@ -135,7 +116,7 @@ public class Doclava {
     com.sun.tools.javadoc.Main.execute(args);
   }
 
-  public static boolean start(RootDoc r) {
+  public static boolean start(RootDoc rootDoc) {
     String keepListFile = null;
     String proofreadFile = null;
     String todoFile = null;
@@ -149,9 +130,9 @@ public class Doclava {
     HashSet<String> stubPackages = null;
     ArrayList<String> knownTagsFiles = new ArrayList<String>();
 
-    root = r;
+    root = rootDoc;
 
-    String[][] options = r.options();
+    String[][] options = rootDoc.options();
     for (String[] a : options) {
       if (a[0].equals("-d")) {
         ClearPage.outputDir = a[1];
@@ -243,7 +224,7 @@ public class Doclava {
       } else if (a[0].equals("-yaml")) {
         yamlNavFile = a[1];
       }
-      
+
     }
 
     if (!readKnownTagsFiles(knownTags, knownTagsFiles)) {
@@ -251,7 +232,7 @@ public class Doclava {
     }
 
     // Set up the data structures
-    Converter.makeInfo(r);
+    Converter.makeInfo(rootDoc);
 
     // Stubs and xml
     final File currentApiFile;
@@ -302,7 +283,7 @@ public class Doclava {
 
       // Apply @since tags from the XML file
       sinceTagger.tagAll(Converter.rootClasses());
-      
+
       // Apply details of federated documentation
       federationTagger.tagAll(Converter.rootClasses());
 
@@ -336,7 +317,7 @@ public class Doclava {
 
       // Navigation tree
       NavTree.writeNavTree(assetsOutputDir);
-      
+
       if (yamlNavFile != null){
         NavTree.writeYamlTree(assetsOutputDir,yamlNavFile);
       }
@@ -989,7 +970,7 @@ public class Doclava {
     makeClassListHDF(data, "package.enums", ClassInfo.sortByName(pkg.enums()));
     makeClassListHDF(data, "package.exceptions", ClassInfo.sortByName(pkg.exceptions()));
     makeClassListHDF(data, "package.errors", ClassInfo.sortByName(pkg.errors()));
-    
+
     TagInfo[] shortDescrTags = pkg.firstSentenceTags();
     TagInfo[] longDescrTags = pkg.inlineTags();
     TagInfo.makeHDF(data, "package.shortDescr", shortDescrTags);
@@ -1124,7 +1105,7 @@ public class Doclava {
 
     Proofread.writeClass(cl.htmlPage(), cl);
   }
-  
+
   public static void writeSource(ClassInfo cl, Data data) {
 	  try {
 	    cl.makeHDF(data);

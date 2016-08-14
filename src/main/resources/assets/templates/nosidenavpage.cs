@@ -4,7 +4,6 @@
 <?cs include:"head_tag.cs" ?>
 <body class="gc-documentation">
 <a id="top"></a>
-<?cs call:custom_masthead() ?>
 
 <div id="body-content">
 <div id="doc-content" style="position:relative;">
@@ -14,7 +13,6 @@
 <?cs include:"footer.cs" ?>
 </div><!-- end doc-content -->
 
-<?cs include:"trailer.cs" ?>
 
 </body>
 </html>

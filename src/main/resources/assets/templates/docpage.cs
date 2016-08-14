@@ -32,7 +32,6 @@
 <?cs include:"footer.cs" ?>
 </div><!-- end doc-content -->
 
-<?cs include:"trailer.cs" ?>
 
 </body>
 </html>

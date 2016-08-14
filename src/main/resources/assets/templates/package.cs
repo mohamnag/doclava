@@ -48,7 +48,6 @@
 </div><!-- end jd-content -->
 </div><!-- doc-content -->
 
-<?cs include:"trailer.cs" ?>
 
 </body>
 </html>
