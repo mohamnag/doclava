@@ -974,6 +974,7 @@ public class Doclava {
         String name = pkg.name();
 
         data.setValue("package.name", name);
+        data.setValue("package.shortName", shortenName(name));
         data.setValue("package.since.key", SinceTagger.keyForName(pkg.getSince()));
         data.setValue("package.since.name", pkg.getSince());
         data.setValue("package.descr", "...description...");

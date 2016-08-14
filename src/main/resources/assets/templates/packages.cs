@@ -1,6 +1,7 @@
 <?cs include:"partials/sidebar-page-top.cs" ?>
+<?cs include:"macros.cs" ?>
 
-    <?cs include:"macros.cs" ?>
+<div class="w3-container">
 
     <h1><?cs var:page.title ?></h1>
 
@@ -16,4 +17,5 @@
         <?cs /each ?>
     <ul>
 
+</div>
 <?cs include:"partials/sidebar-page-bottom.cs" ?>

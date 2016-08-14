@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-teal.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -22,12 +23,13 @@
         Close <i class="fa fa-remove"></i>
     </a>
 
-    <div id="index-links">
-        <a href="<?cs var:toroot ?>packages.html" class=" w3-padding <?cs if:(page.title == "Package Index") ?>w3-light-grey<?cs /if ?>" >Packages</a>
-        <a href="<?cs var:toroot ?>classes.html" class=" w3-padding <?cs if:(page.title == "Class Index") ?>w3-light-grey"<?cs /if ?>" >Classes</a>
+    <div class="w3-dropdown-hover w3-padding-16">
+        <a class="w3-padding" href="javascript:void(0)">Indices <i class="fa fa-caret-down"></i></a>
+        <div class="w3-dropdown-content w3-white w3-card-4">
+            <a href="<?cs var:toroot ?>packages.html" class=" w3-padding <?cs if:(page.title == "Package Index") ?>w3-light-grey<?cs /if ?>" >Packages</a>
+            <a href="<?cs var:toroot ?>classes.html" class=" w3-padding <?cs if:(page.title == "Class Index") ?>w3-light-grey"<?cs /if ?>" >Classes</a>
+        </div>
     </div>
-
-    <hr/>
 
     <?cs each:pkg = docs.packages ?>
     <?cs var:pkg.since.key ?>
@@ -36,4 +38,4 @@
 
 </nav>
 
-<div class="w3-main w3-container" style="margin-left:25%">
+<div class="w3-main" style="margin-left:25%">
