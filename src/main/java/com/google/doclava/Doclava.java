@@ -697,7 +697,7 @@ public class Doclava {
     private static String shortenName(String name) {
         StringBuffer shortName = new StringBuffer();
 
-        String[] packageNames = name.split("\\.");
+        String[] packageNames = name.substring(0, name.lastIndexOf('.') - 1).split("\\.");
         for (String pkgName : packageNames) {
             shortName.append(pkgName.substring(0, 1));
             shortName.append('.');
