@@ -113,7 +113,7 @@ public class Doclava {
     }
 
     public static void main(String[] args) {
-        com.sun.tools.javadoc.Main.execute(args);
+        System.exit(com.sun.tools.javadoc.Main.execute(args));
     }
 
     public static boolean start(RootDoc rootDoc) {
