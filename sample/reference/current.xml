@@ -1,0 +1,7761 @@
+<api>
+<package name="nl.siegmann.epublib"
+>
+<interface name="Constants"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<field name="CHARACTER_ENCODING"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;UTF-8&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DEFAULT_TOC_ID"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;toc&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DOCTYPE_XHTML"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;&lt;!DOCTYPE HTML PUBLIC \&quot;-//W3C//DTD XHTML 1.1//EN\&quot; \&quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\&quot;&gt;&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="EPUBLIB_GENERATOR_NAME"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;EPUBLib version 3.0&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="FRAGMENT_SEPARATOR_CHAR"
+ type="char"
+ transient="false"
+ volatile="false"
+ value="35"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="NAMESPACE_XHTML"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;http://www.w3.org/1999/xhtml&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+</package>
+<package name="nl.siegmann.epublib.browsersupport"
+>
+<class name="NavigationEvent"
+ extends="java.util.EventObject"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="NavigationEvent"
+ type="nl.siegmann.epublib.browsersupport.NavigationEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</constructor>
+<constructor name="NavigationEvent"
+ type="nl.siegmann.epublib.browsersupport.NavigationEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+<parameter name="navigator" type="nl.siegmann.epublib.browsersupport.Navigator">
+</parameter>
+</constructor>
+<method name="getCurrentBook"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentFragmentId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentSectionPos"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentSpinePos"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getNavigator"
+ return="nl.siegmann.epublib.browsersupport.Navigator"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getOldBook"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getOldFragmentId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getOldResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getOldSectionPos"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getOldSpinePos"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isBookChanged"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isFragmentChanged"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isResourceChanged"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isSectionPosChanged"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isSpinePosChanged"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setNavigator"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="navigator" type="nl.siegmann.epublib.browsersupport.Navigator">
+</parameter>
+</method>
+<method name="setOldBook"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="oldBook" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+</method>
+<method name="setOldResource"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="oldResource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="setOldSpinePos"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="oldSpinePos" type="int">
+</parameter>
+</method>
+</class>
+<interface name="NavigationEventListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="navigationPerformed"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="navigationEvent" type="nl.siegmann.epublib.browsersupport.NavigationEvent">
+</parameter>
+</method>
+</interface>
+<class name="NavigationHistory"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="nl.siegmann.epublib.browsersupport.NavigationEventListener">
+</implements>
+<constructor name="NavigationHistory"
+ type="nl.siegmann.epublib.browsersupport.NavigationHistory"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="navigator" type="nl.siegmann.epublib.browsersupport.Navigator">
+</parameter>
+</constructor>
+<method name="addLocation"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="addLocation"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="location" type="nl.siegmann.epublib.browsersupport.NavigationHistory.Location">
+</parameter>
+</method>
+<method name="addLocation"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="href" type="java.lang.String">
+</parameter>
+</method>
+<method name="getCurrentHref"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentPos"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentSize"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getHistoryWaitTime"
+ return="long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMaxHistorySize"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="initBook"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+</method>
+<method name="move"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="delta" type="int">
+</parameter>
+</method>
+<method name="navigationPerformed"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="navigationEvent" type="nl.siegmann.epublib.browsersupport.NavigationEvent">
+</parameter>
+</method>
+<method name="setHistoryWaitTime"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="historyWaitTime" type="long">
+</parameter>
+</method>
+<method name="setMaxHistorySize"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="maxHistorySize" type="int">
+</parameter>
+</method>
+<field name="DEFAULT_MAX_HISTORY_SIZE"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="1000"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="Navigator"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Navigator"
+ type="nl.siegmann.epublib.browsersupport.Navigator"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="Navigator"
+ type="nl.siegmann.epublib.browsersupport.Navigator"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+</constructor>
+<method name="addNavigationEventListener"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="navigationEventListener" type="nl.siegmann.epublib.browsersupport.NavigationEventListener">
+</parameter>
+</method>
+<method name="getBook"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentFragmentId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentSectionPos"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentSpinePos"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="gotoBook"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoFirstSpineSection"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoLastSpineSection"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoNextSpineSection"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoPreviousSpineSection"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoPreviousSpineSection"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pagePos" type="int">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoResource"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resourceHref" type="java.lang.String">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoResource"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoResource"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="fragmentId" type="java.lang.String">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoResource"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="pagePos" type="int">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoResource"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="pagePos" type="int">
+</parameter>
+<parameter name="fragmentId" type="java.lang.String">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoResourceId"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resourceId" type="java.lang.String">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoSpineSection"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="newSpinePos" type="int">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="gotoSpineSection"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="newSpinePos" type="int">
+</parameter>
+<parameter name="newPagePos" type="int">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="hasNextSpineSection"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="hasPreviousSpineSection"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="removeNavigationEventListener"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="navigationEventListener" type="nl.siegmann.epublib.browsersupport.NavigationEventListener">
+</parameter>
+</method>
+<method name="setCurrentResource"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="currentResource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="setCurrentSpinePos"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="currentIndex" type="int">
+</parameter>
+</method>
+</class>
+</package>
+<package name="nl.siegmann.epublib.domain"
+>
+<class name="Author"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Author"
+ type="nl.siegmann.epublib.domain.Author"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="singleName" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="Author"
+ type="nl.siegmann.epublib.domain.Author"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="firstname" type="java.lang.String">
+</parameter>
+<parameter name="lastname" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getFirstname"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLastname"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getRelator"
+ return="nl.siegmann.epublib.domain.Relator"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setFirstname"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="firstname" type="java.lang.String">
+</parameter>
+</method>
+<method name="setLastname"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="lastname" type="java.lang.String">
+</parameter>
+</method>
+<method name="setRelator"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="relator" type="nl.siegmann.epublib.domain.Relator">
+</parameter>
+</method>
+<method name="setRole"
+ return="nl.siegmann.epublib.domain.Relator"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="code" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<class name="Book"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Book"
+ type="nl.siegmann.epublib.domain.Book"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="addResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="addSection"
+ return="nl.siegmann.epublib.domain.TOCReference"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="parentSection" type="nl.siegmann.epublib.domain.TOCReference">
+</parameter>
+<parameter name="sectionTitle" type="java.lang.String">
+</parameter>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="addSection"
+ return="nl.siegmann.epublib.domain.TOCReference"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="title" type="java.lang.String">
+</parameter>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="generateSpineFromTableOfContents"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getContents"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.Resource&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCoverImage"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCoverPage"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getGuide"
+ return="nl.siegmann.epublib.domain.Guide"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMetadata"
+ return="nl.siegmann.epublib.domain.Metadata"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getNcxResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getOpfResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getResources"
+ return="nl.siegmann.epublib.domain.Resources"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSpine"
+ return="nl.siegmann.epublib.domain.Spine"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTableOfContents"
+ return="nl.siegmann.epublib.domain.TableOfContents"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTitle"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setCoverImage"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="coverImage" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="setCoverPage"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="coverPage" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="setMetadata"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="metadata" type="nl.siegmann.epublib.domain.Metadata">
+</parameter>
+</method>
+<method name="setNcxResource"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="ncxResource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="setOpfResource"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="opfResource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="setResources"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resources" type="nl.siegmann.epublib.domain.Resources">
+</parameter>
+</method>
+<method name="setSpine"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="spine" type="nl.siegmann.epublib.domain.Spine">
+</parameter>
+</method>
+<method name="setTableOfContents"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tableOfContents" type="nl.siegmann.epublib.domain.TableOfContents">
+</parameter>
+</method>
+</class>
+<class name="Date"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Date"
+ type="nl.siegmann.epublib.domain.Date"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="date" type="java.util.Date">
+</parameter>
+</constructor>
+<constructor name="Date"
+ type="nl.siegmann.epublib.domain.Date"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dateString" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="Date"
+ type="nl.siegmann.epublib.domain.Date"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="date" type="java.util.Date">
+</parameter>
+<parameter name="event" type="nl.siegmann.epublib.domain.Date.Event">
+</parameter>
+</constructor>
+<constructor name="Date"
+ type="nl.siegmann.epublib.domain.Date"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dateString" type="java.lang.String">
+</parameter>
+<parameter name="event" type="nl.siegmann.epublib.domain.Date.Event">
+</parameter>
+</constructor>
+<constructor name="Date"
+ type="nl.siegmann.epublib.domain.Date"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="date" type="java.util.Date">
+</parameter>
+<parameter name="event" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="Date"
+ type="nl.siegmann.epublib.domain.Date"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dateString" type="java.lang.String">
+</parameter>
+<parameter name="event" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getEvent"
+ return="nl.siegmann.epublib.domain.Date.Event"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getValue"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setEvent"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="event" type="nl.siegmann.epublib.domain.Date.Event">
+</parameter>
+</method>
+</class>
+<class name="Date.Event"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="fromValue"
+ return="nl.siegmann.epublib.domain.Date.Event"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="v" type="java.lang.String">
+</parameter>
+</method>
+<method name="valueOf"
+ return="nl.siegmann.epublib.domain.Date.Event"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="nl.siegmann.epublib.domain.Date.Event[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Guide"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Guide"
+ type="nl.siegmann.epublib.domain.Guide"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="addReference"
+ return="nl.siegmann.epublib.domain.ResourceReference"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="reference" type="nl.siegmann.epublib.domain.GuideReference">
+</parameter>
+</method>
+<method name="getCoverPage"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCoverReference"
+ return="nl.siegmann.epublib.domain.GuideReference"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getGuideReferencesByType"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.GuideReference&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="referenceTypeName" type="java.lang.String">
+</parameter>
+</method>
+<method name="getReferences"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.GuideReference&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setCoverPage"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="coverPage" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="setCoverReference"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="guideReference" type="nl.siegmann.epublib.domain.GuideReference">
+</parameter>
+</method>
+<method name="setReferences"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="references" type="java.util.List&lt;nl.siegmann.epublib.domain.GuideReference&gt;">
+</parameter>
+</method>
+<field name="DEFAULT_COVER_TITLE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="GuideReference"
+ extends="nl.siegmann.epublib.domain.TitledResourceReference"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="GuideReference"
+ type="nl.siegmann.epublib.domain.GuideReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</constructor>
+<constructor name="GuideReference"
+ type="nl.siegmann.epublib.domain.GuideReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="title" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="GuideReference"
+ type="nl.siegmann.epublib.domain.GuideReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="type" type="java.lang.String">
+</parameter>
+<parameter name="title" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="GuideReference"
+ type="nl.siegmann.epublib.domain.GuideReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="type" type="java.lang.String">
+</parameter>
+<parameter name="title" type="java.lang.String">
+</parameter>
+<parameter name="fragmentId" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getType"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setType"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="type" type="java.lang.String">
+</parameter>
+</method>
+<field name="ACKNOWLEDGEMENTS"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="BIBLIOGRAPHY"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="COLOPHON"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="COPYRIGHT_PAGE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="COVER"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DEDICATION"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="EPIGRAPH"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="FOREWORD"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="GLOSSARY"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="INDEX"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="LOI"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="LOT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="NOTES"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PREFACE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="TEXT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="TITLE_PAGE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="TOC"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="Identifier"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Identifier"
+ type="nl.siegmann.epublib.domain.Identifier"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="Identifier"
+ type="nl.siegmann.epublib.domain.Identifier"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="scheme" type="java.lang.String">
+</parameter>
+<parameter name="value" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getBookIdIdentifier"
+ return="nl.siegmann.epublib.domain.Identifier"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="identifiers" type="java.util.List&lt;nl.siegmann.epublib.domain.Identifier&gt;">
+</parameter>
+</method>
+<method name="getScheme"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getValue"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isBookId"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setBookId"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bookId" type="boolean">
+</parameter>
+</method>
+<method name="setScheme"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="scheme" type="java.lang.String">
+</parameter>
+</method>
+<method name="setValue"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<interface name="Identifier.Scheme"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<field name="ISBN"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;ISBN&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="URI"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;URI&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="URL"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;URL&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="UUID"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;UUID&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+<class name="LazyResource"
+ extends="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="LazyResource"
+ type="nl.siegmann.epublib.domain.LazyResource"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="filename" type="java.lang.String">
+</parameter>
+<parameter name="size" type="long">
+</parameter>
+<parameter name="href" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="LazyResource"
+ type="nl.siegmann.epublib.domain.LazyResource"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.InputStream">
+</parameter>
+<parameter name="filename" type="java.lang.String">
+</parameter>
+<parameter name="length" type="int">
+</parameter>
+<parameter name="href" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</constructor>
+<method name="initialize"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="isInitialized"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ManifestItemProperties"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="nl.siegmann.epublib.domain.ManifestProperties">
+</implements>
+<method name="getName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="nl.siegmann.epublib.domain.ManifestItemProperties"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="nl.siegmann.epublib.domain.ManifestItemProperties[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ManifestItemRefProperties"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="nl.siegmann.epublib.domain.ManifestProperties">
+</implements>
+<method name="getName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="nl.siegmann.epublib.domain.ManifestItemRefProperties"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="nl.siegmann.epublib.domain.ManifestItemRefProperties[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<interface name="ManifestProperties"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getName"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<class name="MediaType"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="MediaType"
+ type="nl.siegmann.epublib.domain.MediaType"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+<parameter name="defaultExtension" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="MediaType"
+ type="nl.siegmann.epublib.domain.MediaType"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+<parameter name="defaultExtension" type="java.lang.String">
+</parameter>
+<parameter name="extensions" type="java.lang.String[]">
+</parameter>
+</constructor>
+<constructor name="MediaType"
+ type="nl.siegmann.epublib.domain.MediaType"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+<parameter name="defaultExtension" type="java.lang.String">
+</parameter>
+<parameter name="extensions" type="java.util.Collection&lt;java.lang.String&gt;">
+</parameter>
+</constructor>
+<method name="getDefaultExtension"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getExtensions"
+ return="java.util.Collection&lt;java.lang.String&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Metadata"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Metadata"
+ type="nl.siegmann.epublib.domain.Metadata"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="addAuthor"
+ return="nl.siegmann.epublib.domain.Author"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="author" type="nl.siegmann.epublib.domain.Author">
+</parameter>
+</method>
+<method name="addContributor"
+ return="nl.siegmann.epublib.domain.Author"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="contributor" type="nl.siegmann.epublib.domain.Author">
+</parameter>
+</method>
+<method name="addDate"
+ return="nl.siegmann.epublib.domain.Date"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="date" type="nl.siegmann.epublib.domain.Date">
+</parameter>
+</method>
+<method name="addDescription"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="description" type="java.lang.String">
+</parameter>
+</method>
+<method name="addIdentifier"
+ return="nl.siegmann.epublib.domain.Identifier"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="identifier" type="nl.siegmann.epublib.domain.Identifier">
+</parameter>
+</method>
+<method name="addPublisher"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="publisher" type="java.lang.String">
+</parameter>
+</method>
+<method name="addTitle"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="title" type="java.lang.String">
+</parameter>
+</method>
+<method name="addType"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="type" type="java.lang.String">
+</parameter>
+</method>
+<method name="getAuthors"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.Author&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getContributors"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.Author&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDates"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.Date&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDescriptions"
+ return="java.util.List&lt;java.lang.String&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getFirstTitle"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getFormat"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getIdentifiers"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.Identifier&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLanguage"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMetaAttribute"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="getOtherProperties"
+ return="java.util.Map&lt;javax.xml.namespace.QName, java.lang.String&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPublishers"
+ return="java.util.List&lt;java.lang.String&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getRights"
+ return="java.util.List&lt;java.lang.String&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSubjects"
+ return="java.util.List&lt;java.lang.String&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTitles"
+ return="java.util.List&lt;java.lang.String&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTypes"
+ return="java.util.List&lt;java.lang.String&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isAutoGeneratedId"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setAuthors"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="authors" type="java.util.List&lt;nl.siegmann.epublib.domain.Author&gt;">
+</parameter>
+</method>
+<method name="setContributors"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="contributors" type="java.util.List&lt;nl.siegmann.epublib.domain.Author&gt;">
+</parameter>
+</method>
+<method name="setDates"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dates" type="java.util.List&lt;nl.siegmann.epublib.domain.Date&gt;">
+</parameter>
+</method>
+<method name="setDescriptions"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="descriptions" type="java.util.List&lt;java.lang.String&gt;">
+</parameter>
+</method>
+<method name="setFormat"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="format" type="java.lang.String">
+</parameter>
+</method>
+<method name="setIdentifiers"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="identifiers" type="java.util.List&lt;nl.siegmann.epublib.domain.Identifier&gt;">
+</parameter>
+</method>
+<method name="setLanguage"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="language" type="java.lang.String">
+</parameter>
+</method>
+<method name="setMetaAttributes"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="metaAttributes" type="java.util.Map&lt;java.lang.String, java.lang.String&gt;">
+</parameter>
+</method>
+<method name="setOtherProperties"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="otherProperties" type="java.util.Map&lt;javax.xml.namespace.QName, java.lang.String&gt;">
+</parameter>
+</method>
+<method name="setPublishers"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="publishers" type="java.util.List&lt;java.lang.String&gt;">
+</parameter>
+</method>
+<method name="setRights"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="rights" type="java.util.List&lt;java.lang.String&gt;">
+</parameter>
+</method>
+<method name="setSubjects"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="subjects" type="java.util.List&lt;java.lang.String&gt;">
+</parameter>
+</method>
+<method name="setTitles"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="titles" type="java.util.List&lt;java.lang.String&gt;">
+</parameter>
+</method>
+<method name="setTypes"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="types" type="java.util.List&lt;java.lang.String&gt;">
+</parameter>
+</method>
+<field name="DEFAULT_LANGUAGE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;en&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="Relator"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="byCode"
+ return="nl.siegmann.epublib.domain.Relator"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="code" type="java.lang.String">
+</parameter>
+</method>
+<method name="getCode"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="nl.siegmann.epublib.domain.Relator"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="nl.siegmann.epublib.domain.Relator[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Resource"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Resource"
+ type="nl.siegmann.epublib.domain.Resource"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="href" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="Resource"
+ type="nl.siegmann.epublib.domain.Resource"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="data" type="byte[]">
+</parameter>
+<parameter name="mediaType" type="nl.siegmann.epublib.domain.MediaType">
+</parameter>
+</constructor>
+<constructor name="Resource"
+ type="nl.siegmann.epublib.domain.Resource"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="data" type="byte[]">
+</parameter>
+<parameter name="href" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="Resource"
+ type="nl.siegmann.epublib.domain.Resource"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.Reader">
+</parameter>
+<parameter name="href" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</constructor>
+<constructor name="Resource"
+ type="nl.siegmann.epublib.domain.Resource"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.InputStream">
+</parameter>
+<parameter name="href" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</constructor>
+<constructor name="Resource"
+ type="nl.siegmann.epublib.domain.Resource"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="java.lang.String">
+</parameter>
+<parameter name="data" type="byte[]">
+</parameter>
+<parameter name="href" type="java.lang.String">
+</parameter>
+<parameter name="mediaType" type="nl.siegmann.epublib.domain.MediaType">
+</parameter>
+</constructor>
+<constructor name="Resource"
+ type="nl.siegmann.epublib.domain.Resource"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="java.lang.String">
+</parameter>
+<parameter name="data" type="byte[]">
+</parameter>
+<parameter name="href" type="java.lang.String">
+</parameter>
+<parameter name="mediaType" type="nl.siegmann.epublib.domain.MediaType">
+</parameter>
+<parameter name="inputEncoding" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="close"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getData"
+ return="byte[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="getHref"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getInputEncoding"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getInputStream"
+ return="java.io.InputStream"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="getMediaType"
+ return="nl.siegmann.epublib.domain.MediaType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getReader"
+ return="java.io.Reader"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="getSize"
+ return="long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTitle"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setData"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="data" type="byte[]">
+</parameter>
+</method>
+<method name="setHref"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="href" type="java.lang.String">
+</parameter>
+</method>
+<method name="setId"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="java.lang.String">
+</parameter>
+</method>
+<method name="setInputEncoding"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+</method>
+<method name="setMediaType"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mediaType" type="nl.siegmann.epublib.domain.MediaType">
+</parameter>
+</method>
+<method name="setTitle"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="title" type="java.lang.String">
+</parameter>
+</method>
+<field name="data"
+ type="byte[]"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="originalHref"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="ResourceInputStream"
+ extends="java.io.FilterInputStream"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ResourceInputStream"
+ type="nl.siegmann.epublib.domain.ResourceInputStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.InputStream">
+</parameter>
+<parameter name="zipFile" type="java.util.zip.ZipFile">
+</parameter>
+</constructor>
+</class>
+<class name="ResourceReference"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ResourceReference"
+ type="nl.siegmann.epublib.domain.ResourceReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</constructor>
+<method name="getResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getResourceId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setResource"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<field name="resource"
+ type="nl.siegmann.epublib.domain.Resource"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="Resources"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Resources"
+ type="nl.siegmann.epublib.domain.Resources"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="add"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="addAll"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resources" type="java.util.Collection&lt;nl.siegmann.epublib.domain.Resource&gt;">
+</parameter>
+</method>
+<method name="containsByHref"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="href" type="java.lang.String">
+</parameter>
+</method>
+<method name="containsId"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="java.lang.String">
+</parameter>
+</method>
+<method name="findFirstResourceByMediaType"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mediaType" type="nl.siegmann.epublib.domain.MediaType">
+</parameter>
+</method>
+<method name="findFirstResourceByMediaType"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resources" type="java.util.Collection&lt;nl.siegmann.epublib.domain.Resource&gt;">
+</parameter>
+<parameter name="mediaType" type="nl.siegmann.epublib.domain.MediaType">
+</parameter>
+</method>
+<method name="fixResourceId"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="getAll"
+ return="java.util.Collection&lt;nl.siegmann.epublib.domain.Resource&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAllHrefs"
+ return="java.util.Collection&lt;java.lang.String&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getByHref"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="href" type="java.lang.String">
+</parameter>
+</method>
+<method name="getById"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="java.lang.String">
+</parameter>
+</method>
+<method name="getByIdOrHref"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="idOrHref" type="java.lang.String">
+</parameter>
+</method>
+<method name="getResourceMap"
+ return="java.util.Map&lt;java.lang.String, nl.siegmann.epublib.domain.Resource&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getResourcesByMediaType"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.Resource&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mediaType" type="nl.siegmann.epublib.domain.MediaType">
+</parameter>
+</method>
+<method name="getResourcesByMediaTypes"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.Resource&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mediaTypes" type="nl.siegmann.epublib.domain.MediaType[]">
+</parameter>
+</method>
+<method name="isEmpty"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="remove"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="href" type="java.lang.String">
+</parameter>
+</method>
+<method name="set"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resources" type="java.util.Collection&lt;nl.siegmann.epublib.domain.Resource&gt;">
+</parameter>
+</method>
+<method name="set"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resources" type="java.util.Map&lt;java.lang.String, nl.siegmann.epublib.domain.Resource&gt;">
+</parameter>
+</method>
+<method name="size"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Spine"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Spine"
+ type="nl.siegmann.epublib.domain.Spine"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="Spine"
+ type="nl.siegmann.epublib.domain.Spine"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tableOfContents" type="nl.siegmann.epublib.domain.TableOfContents">
+</parameter>
+</constructor>
+<constructor name="Spine"
+ type="nl.siegmann.epublib.domain.Spine"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="spineReferences" type="java.util.List&lt;nl.siegmann.epublib.domain.SpineReference&gt;">
+</parameter>
+</constructor>
+<method name="addResource"
+ return="nl.siegmann.epublib.domain.SpineReference"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="addSpineReference"
+ return="nl.siegmann.epublib.domain.SpineReference"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="spineReference" type="nl.siegmann.epublib.domain.SpineReference">
+</parameter>
+</method>
+<method name="createSpineReferences"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.SpineReference&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resources" type="java.util.Collection&lt;nl.siegmann.epublib.domain.Resource&gt;">
+</parameter>
+</method>
+<method name="findFirstResourceById"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resourceId" type="java.lang.String">
+</parameter>
+</method>
+<method name="getResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="index" type="int">
+</parameter>
+</method>
+<method name="getResourceIndex"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="currentResource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="getResourceIndex"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resourceHref" type="java.lang.String">
+</parameter>
+</method>
+<method name="getSpineReferences"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.SpineReference&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTocResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isEmpty"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setSpineReferences"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="spineReferences" type="java.util.List&lt;nl.siegmann.epublib.domain.SpineReference&gt;">
+</parameter>
+</method>
+<method name="setTocResource"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tocResource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</method>
+<method name="size"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="SpineReference"
+ extends="nl.siegmann.epublib.domain.ResourceReference"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SpineReference"
+ type="nl.siegmann.epublib.domain.SpineReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</constructor>
+<constructor name="SpineReference"
+ type="nl.siegmann.epublib.domain.SpineReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="linear" type="boolean">
+</parameter>
+</constructor>
+<method name="isLinear"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setLinear"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="linear" type="boolean">
+</parameter>
+</method>
+</class>
+<class name="TOCReference"
+ extends="nl.siegmann.epublib.domain.TitledResourceReference"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="TOCReference"
+ type="nl.siegmann.epublib.domain.TOCReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="TOCReference"
+ type="nl.siegmann.epublib.domain.TOCReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</constructor>
+<constructor name="TOCReference"
+ type="nl.siegmann.epublib.domain.TOCReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="fragmentId" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="TOCReference"
+ type="nl.siegmann.epublib.domain.TOCReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="title" type="java.lang.String">
+</parameter>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="fragmentId" type="java.lang.String">
+</parameter>
+<parameter name="children" type="java.util.List&lt;nl.siegmann.epublib.domain.TOCReference&gt;">
+</parameter>
+</constructor>
+<method name="addChildSection"
+ return="nl.siegmann.epublib.domain.TOCReference"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="childSection" type="nl.siegmann.epublib.domain.TOCReference">
+</parameter>
+</method>
+<method name="getChildren"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.TOCReference&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getComparatorByTitleIgnoreCase"
+ return="java.util.Comparator&lt;nl.siegmann.epublib.domain.TOCReference&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setChildren"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="children" type="java.util.List&lt;nl.siegmann.epublib.domain.TOCReference&gt;">
+</parameter>
+</method>
+</class>
+<class name="TableOfContents"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="TableOfContents"
+ type="nl.siegmann.epublib.domain.TableOfContents"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="TableOfContents"
+ type="nl.siegmann.epublib.domain.TableOfContents"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tocReferences" type="java.util.List&lt;nl.siegmann.epublib.domain.TOCReference&gt;">
+</parameter>
+</constructor>
+<method name="addSection"
+ return="nl.siegmann.epublib.domain.TOCReference"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="path" type="java.lang.String">
+</parameter>
+</method>
+<method name="addSection"
+ return="nl.siegmann.epublib.domain.TOCReference"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="path" type="java.lang.String">
+</parameter>
+<parameter name="pathSeparator" type="java.lang.String">
+</parameter>
+</method>
+<method name="addSection"
+ return="nl.siegmann.epublib.domain.TOCReference"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="pathElements" type="java.lang.String[]">
+</parameter>
+</method>
+<method name="addSection"
+ return="nl.siegmann.epublib.domain.TOCReference"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="pathElements" type="int[]">
+</parameter>
+<parameter name="sectionTitlePrefix" type="java.lang.String">
+</parameter>
+<parameter name="sectionNumberSeparator" type="java.lang.String">
+</parameter>
+</method>
+<method name="addTOCReference"
+ return="nl.siegmann.epublib.domain.TOCReference"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tocReference" type="nl.siegmann.epublib.domain.TOCReference">
+</parameter>
+</method>
+<method name="calculateDepth"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAllUniqueResources"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.Resource&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTocReferences"
+ return="java.util.List&lt;nl.siegmann.epublib.domain.TOCReference&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setTocReferences"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tocReferences" type="java.util.List&lt;nl.siegmann.epublib.domain.TOCReference&gt;">
+</parameter>
+</method>
+<method name="size"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="DEFAULT_PATH_SEPARATOR"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;/&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="TitledResourceReference"
+ extends="nl.siegmann.epublib.domain.ResourceReference"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="TitledResourceReference"
+ type="nl.siegmann.epublib.domain.TitledResourceReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+</constructor>
+<constructor name="TitledResourceReference"
+ type="nl.siegmann.epublib.domain.TitledResourceReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="title" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="TitledResourceReference"
+ type="nl.siegmann.epublib.domain.TitledResourceReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="title" type="java.lang.String">
+</parameter>
+<parameter name="fragmentId" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getCompleteHref"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getFragmentId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTitle"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setFragmentId"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="fragmentId" type="java.lang.String">
+</parameter>
+</method>
+<method name="setResource"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="fragmentId" type="java.lang.String">
+</parameter>
+</method>
+<method name="setTitle"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="title" type="java.lang.String">
+</parameter>
+</method>
+</class>
+</package>
+<package name="nl.siegmann.epublib.epub"
+>
+<interface name="BookProcessor"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="processBook"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+</method>
+<field name="IDENTITY_BOOKPROCESSOR"
+ type="nl.siegmann.epublib.epub.BookProcessor"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+<class name="BookProcessorPipeline"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="nl.siegmann.epublib.epub.BookProcessor">
+</implements>
+<constructor name="BookProcessorPipeline"
+ type="nl.siegmann.epublib.epub.BookProcessorPipeline"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="BookProcessorPipeline"
+ type="nl.siegmann.epublib.epub.BookProcessorPipeline"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bookProcessingPipeline" type="java.util.List&lt;nl.siegmann.epublib.epub.BookProcessor&gt;">
+</parameter>
+</constructor>
+<method name="addBookProcessor"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bookProcessor" type="nl.siegmann.epublib.epub.BookProcessor">
+</parameter>
+</method>
+<method name="addBookProcessors"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bookProcessors" type="java.util.Collection&lt;nl.siegmann.epublib.epub.BookProcessor&gt;">
+</parameter>
+</method>
+<method name="getBookProcessors"
+ return="java.util.List&lt;nl.siegmann.epublib.epub.BookProcessor&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="processBook"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+</method>
+<method name="setBookProcessingPipeline"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bookProcessingPipeline" type="java.util.List&lt;nl.siegmann.epublib.epub.BookProcessor&gt;">
+</parameter>
+</method>
+</class>
+<class name="EpubProcessorSupport"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="EpubProcessorSupport"
+ type="nl.siegmann.epublib.epub.EpubProcessorSupport"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="createDocumentBuilder"
+ return="javax.xml.parsers.DocumentBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="createXmlSerializer"
+ return="XmlSerializer"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="out" type="java.io.OutputStream">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+</method>
+<method name="createXmlSerializer"
+ return="XmlSerializer"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="out" type="java.io.Writer">
+</parameter>
+</method>
+<method name="getDocumentBuilderFactory"
+ return="javax.xml.parsers.DocumentBuilderFactory"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getEntityResolver"
+ return="org.xml.sax.EntityResolver"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="documentBuilderFactory"
+ type="javax.xml.parsers.DocumentBuilderFactory"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="EpubReader"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="EpubReader"
+ type="nl.siegmann.epublib.epub.EpubReader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="readEpub"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.InputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="readEpub"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="net.sf.jazzlib.ZipInputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="readEpub"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zipfile" type="net.sf.jazzlib.ZipFile">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="readEpub"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.InputStream">
+</parameter>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="readEpub"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="net.sf.jazzlib.ZipInputStream">
+</parameter>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="readEpub"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="net.sf.jazzlib.ZipFile">
+</parameter>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="readEpub"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resources" type="nl.siegmann.epublib.domain.Resources">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="readEpub"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resources" type="nl.siegmann.epublib.domain.Resources">
+</parameter>
+<parameter name="result" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="readEpubLazy"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zipFile" type="net.sf.jazzlib.ZipFile">
+</parameter>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="readEpubLazy"
+ return="nl.siegmann.epublib.domain.Book"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zipFile" type="net.sf.jazzlib.ZipFile">
+</parameter>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<parameter name="lazyLoadedTypes" type="java.util.List&lt;nl.siegmann.epublib.domain.MediaType&gt;">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class name="EpubWriter"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="EpubWriter"
+ type="nl.siegmann.epublib.epub.EpubWriter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="EpubWriter"
+ type="nl.siegmann.epublib.epub.EpubWriter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bookProcessor" type="nl.siegmann.epublib.epub.BookProcessor">
+</parameter>
+</constructor>
+<method name="getBookProcessor"
+ return="nl.siegmann.epublib.epub.BookProcessor"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setBookProcessor"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bookProcessor" type="nl.siegmann.epublib.epub.BookProcessor">
+</parameter>
+</method>
+<method name="write"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+<parameter name="out" type="java.io.OutputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<interface name="HtmlProcessor"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="processHtmlResource"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="out" type="java.io.OutputStream">
+</parameter>
+</method>
+</interface>
+<class name="Main"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Main"
+ type="nl.siegmann.epublib.epub.Main"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="NCXDocument"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="NCXDocument"
+ type="nl.siegmann.epublib.epub.NCXDocument"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="createNCXResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+<exception name="IllegalArgumentException" type="java.lang.IllegalArgumentException">
+</exception>
+<exception name="IllegalStateException" type="java.lang.IllegalStateException">
+</exception>
+</method>
+<method name="createNCXResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="identifiers" type="java.util.List&lt;nl.siegmann.epublib.domain.Identifier&gt;">
+</parameter>
+<parameter name="title" type="java.lang.String">
+</parameter>
+<parameter name="authors" type="java.util.List&lt;nl.siegmann.epublib.domain.Author&gt;">
+</parameter>
+<parameter name="tableOfContents" type="nl.siegmann.epublib.domain.TableOfContents">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+<exception name="IllegalArgumentException" type="java.lang.IllegalArgumentException">
+</exception>
+<exception name="IllegalStateException" type="java.lang.IllegalStateException">
+</exception>
+</method>
+<method name="read"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+<parameter name="epubReader" type="nl.siegmann.epublib.epub.EpubReader">
+</parameter>
+</method>
+<method name="write"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="epubWriter" type="nl.siegmann.epublib.epub.EpubWriter">
+</parameter>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+<parameter name="resultStream" type="java.util.zip.ZipOutputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="write"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="xmlSerializer" type="XmlSerializer">
+</parameter>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+<exception name="IllegalArgumentException" type="java.lang.IllegalArgumentException">
+</exception>
+<exception name="IllegalStateException" type="java.lang.IllegalStateException">
+</exception>
+</method>
+<method name="write"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="serializer" type="XmlSerializer">
+</parameter>
+<parameter name="identifiers" type="java.util.List&lt;nl.siegmann.epublib.domain.Identifier&gt;">
+</parameter>
+<parameter name="title" type="java.lang.String">
+</parameter>
+<parameter name="authors" type="java.util.List&lt;nl.siegmann.epublib.domain.Author&gt;">
+</parameter>
+<parameter name="tableOfContents" type="nl.siegmann.epublib.domain.TableOfContents">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+<exception name="IllegalArgumentException" type="java.lang.IllegalArgumentException">
+</exception>
+<exception name="IllegalStateException" type="java.lang.IllegalStateException">
+</exception>
+</method>
+<field name="DEFAULT_NCX_HREF"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;toc.ncx&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="NAMESPACE_NCX"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;http://www.daisy.org/z3986/2005/ncx/&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="NCX_ITEM_ID"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;ncx&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PREFIX_DTB"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;dtb&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PREFIX_NCX"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;ncx&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="PackageDocumentBase"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="PackageDocumentBase"
+ type="nl.siegmann.epublib.epub.PackageDocumentBase"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<field name="BOOK_ID_ID"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;BookId&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="NAMESPACE_DUBLIN_CORE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;http://purl.org/dc/elements/1.1/&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="NAMESPACE_OPF"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;http://www.idpf.org/2007/opf&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PREFIX_DUBLIN_CORE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;dc&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PREFIX_OPF"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;opf&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="dateFormat"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;yyyy-MM-dd&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<interface name="PackageDocumentBase.DCAttributes"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<field name="id"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;id&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="scheme"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;scheme&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+<interface name="PackageDocumentBase.DCTags"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<field name="contributor"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;contributor&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="coverage"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;coverage&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="creator"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;creator&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="date"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;date&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="description"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;description&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="format"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;format&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="identifier"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;identifier&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="language"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;language&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="publisher"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;publisher&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="relation"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;relation&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="rights"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;rights&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="source"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;source&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="subject"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;subject&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="title"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;title&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="type"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;type&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+<interface name="PackageDocumentBase.OPFAttributes"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<field name="content"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;content&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="event"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;event&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="file_as"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;file-as&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="href"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;href&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="id"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;id&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="idref"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;idref&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="linear"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;linear&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="media_type"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;media-type&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="name"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;name&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="property"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;property&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="role"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;role&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="scheme"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;scheme&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="title"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;title&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="toc"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;toc&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="type"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;type&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="uniqueIdentifier"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;unique-identifier&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="version"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;version&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+<interface name="PackageDocumentBase.OPFTags"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<field name="guide"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;guide&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="item"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;item&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="itemref"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;itemref&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="manifest"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;manifest&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="meta"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;meta&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="metadata"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;metadata&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="packageTag"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;package&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="reference"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;reference&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="spine"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;spine&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+<interface name="PackageDocumentBase.OPFValues"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<field name="generator"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;generator&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="meta_cover"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;cover&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="no"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;no&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="reference_cover"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;cover&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+<class name="PackageDocumentMetadataWriter"
+ extends="nl.siegmann.epublib.epub.PackageDocumentBase"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="PackageDocumentMetadataWriter"
+ type="nl.siegmann.epublib.epub.PackageDocumentMetadataWriter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="writeMetaData"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+<parameter name="serializer" type="XmlSerializer">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+<exception name="IllegalArgumentException" type="java.lang.IllegalArgumentException">
+</exception>
+<exception name="IllegalStateException" type="java.lang.IllegalStateException">
+</exception>
+</method>
+</class>
+<class name="PackageDocumentReader"
+ extends="nl.siegmann.epublib.epub.PackageDocumentBase"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="PackageDocumentReader"
+ type="nl.siegmann.epublib.epub.PackageDocumentReader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="read"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="packageResource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="epubReader" type="nl.siegmann.epublib.epub.EpubReader">
+</parameter>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+<parameter name="resources" type="nl.siegmann.epublib.domain.Resources">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+<exception name="ParserConfigurationException" type="javax.xml.parsers.ParserConfigurationException">
+</exception>
+<exception name="SAXException" type="org.xml.sax.SAXException">
+</exception>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+</method>
+</class>
+<class name="PackageDocumentWriter"
+ extends="nl.siegmann.epublib.epub.PackageDocumentBase"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="PackageDocumentWriter"
+ type="nl.siegmann.epublib.epub.PackageDocumentWriter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="write"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="epubWriter" type="nl.siegmann.epublib.epub.EpubWriter">
+</parameter>
+<parameter name="serializer" type="XmlSerializer">
+</parameter>
+<parameter name="book" type="nl.siegmann.epublib.domain.Book">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class name="ResourcesLoader"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ResourcesLoader"
+ type="nl.siegmann.epublib.epub.ResourcesLoader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="loadResources"
+ return="nl.siegmann.epublib.domain.Resources"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zipFile" type="net.sf.jazzlib.ZipFile">
+</parameter>
+<parameter name="defaultHtmlEncoding" type="java.lang.String">
+</parameter>
+<parameter name="lazyLoadedTypes" type="java.util.List&lt;nl.siegmann.epublib.domain.MediaType&gt;">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="loadResources"
+ return="nl.siegmann.epublib.domain.Resources"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.InputStream">
+</parameter>
+<parameter name="defaultHtmlEncoding" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="loadResources"
+ return="nl.siegmann.epublib.domain.Resources"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zipInputStream" type="net.sf.jazzlib.ZipInputStream">
+</parameter>
+<parameter name="defaultHtmlEncoding" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="loadResources"
+ return="nl.siegmann.epublib.domain.Resources"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zipFile" type="net.sf.jazzlib.ZipFile">
+</parameter>
+<parameter name="defaultHtmlEncoding" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+</package>
+<package name="nl.siegmann.epublib.service"
+>
+<class name="MediatypeService"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="MediatypeService"
+ type="nl.siegmann.epublib.service.MediatypeService"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="determineMediaType"
+ return="nl.siegmann.epublib.domain.MediaType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="filename" type="java.lang.String">
+</parameter>
+</method>
+<method name="getMediaTypeByName"
+ return="nl.siegmann.epublib.domain.MediaType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mediaTypeName" type="java.lang.String">
+</parameter>
+</method>
+<method name="isBitmapImage"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mediaType" type="nl.siegmann.epublib.domain.MediaType">
+</parameter>
+</method>
+<field name="CSS"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="EPUB"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="GIF"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="JAVASCRIPT"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="JPG"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="MP3"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="MP4"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="NCX"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="OGG"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="OPENTYPE"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PLS"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PNG"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SMIL"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SVG"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="TTF"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="WOFF"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="XHTML"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="XPGT"
+ type="nl.siegmann.epublib.domain.MediaType"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="mediaTypesByName"
+ type="java.util.Map"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="mediatypes"
+ type="nl.siegmann.epublib.domain.MediaType[]"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+</package>
+<package name="nl.siegmann.epublib.util"
+>
+<class name="CollectionUtil"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="CollectionUtil"
+ type="nl.siegmann.epublib.util.CollectionUtil"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="createEnumerationFromIterator"
+ return="java.util.Enumeration&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="it" type="java.util.Iterator&lt;T&gt;">
+</parameter>
+</method>
+<method name="first"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="list" type="java.util.List&lt;T&gt;">
+</parameter>
+</method>
+<method name="isEmpty"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="collection" type="java.util.Collection&lt;?&gt;">
+</parameter>
+</method>
+</class>
+<class name="IOUtil"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="IOUtil"
+ type="nl.siegmann.epublib.util.IOUtil"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="calcNewNrReadSize"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="nrRead" type="int">
+</parameter>
+<parameter name="totalNrNread" type="int">
+</parameter>
+</method>
+<method name="copy"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.InputStream">
+</parameter>
+<parameter name="out" type="java.io.OutputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="copy"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.Reader">
+</parameter>
+<parameter name="out" type="java.io.Writer">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="toByteArray"
+ return="byte[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.Reader">
+</parameter>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="toByteArray"
+ return="byte[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.InputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="toByteArray"
+ return="byte[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.InputStream">
+</parameter>
+<parameter name="size" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<field name="IO_COPY_BUFFER_SIZE"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="4096"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="NoCloseOutputStream"
+ extends="java.io.OutputStream"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="NoCloseOutputStream"
+ type="nl.siegmann.epublib.util.NoCloseOutputStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="outputStream" type="java.io.OutputStream">
+</parameter>
+</constructor>
+<method name="write"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class name="NoCloseWriter"
+ extends="java.io.Writer"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="NoCloseWriter"
+ type="nl.siegmann.epublib.util.NoCloseWriter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="writer" type="java.io.Writer">
+</parameter>
+</constructor>
+<method name="close"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="flush"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="write"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cbuf" type="char[]">
+</parameter>
+<parameter name="off" type="int">
+</parameter>
+<parameter name="len" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class name="ResourceUtil"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ResourceUtil"
+ type="nl.siegmann.epublib.util.ResourceUtil"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="createResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="file" type="java.io.File">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="createResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="title" type="java.lang.String">
+</parameter>
+<parameter name="href" type="java.lang.String">
+</parameter>
+</method>
+<method name="createResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zipEntry" type="net.sf.jazzlib.ZipEntry">
+</parameter>
+<parameter name="zipInputStream" type="net.sf.jazzlib.ZipInputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="createResource"
+ return="nl.siegmann.epublib.domain.Resource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zipEntry" type="net.sf.jazzlib.ZipEntry">
+</parameter>
+<parameter name="zipInputStream" type="java.io.InputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="getAsDocument"
+ return="org.w3c.dom.Document"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+<exception name="ParserConfigurationException" type="javax.xml.parsers.ParserConfigurationException">
+</exception>
+<exception name="SAXException" type="org.xml.sax.SAXException">
+</exception>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+</method>
+<method name="getAsDocument"
+ return="org.w3c.dom.Document"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<parameter name="documentBuilder" type="javax.xml.parsers.DocumentBuilder">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+<exception name="ParserConfigurationException" type="javax.xml.parsers.ParserConfigurationException">
+</exception>
+<exception name="SAXException" type="org.xml.sax.SAXException">
+</exception>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+</method>
+<method name="getInputSource"
+ return="org.xml.sax.InputSource"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resource" type="nl.siegmann.epublib.domain.Resource">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="recode"
+ return="byte[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="inputEncoding" type="java.lang.String">
+</parameter>
+<parameter name="outputEncoding" type="java.lang.String">
+</parameter>
+<parameter name="input" type="byte[]">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+</method>
+</class>
+<class name="StringUtil"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="StringUtil"
+ type="nl.siegmann.epublib.util.StringUtil"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="collapsePathDots"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="path" type="java.lang.String">
+</parameter>
+</method>
+<method name="defaultIfNull"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.String">
+</parameter>
+</method>
+<method name="defaultIfNull"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.String">
+</parameter>
+<parameter name="defaultValue" type="java.lang.String">
+</parameter>
+</method>
+<method name="endsWithIgnoreCase"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="source" type="java.lang.String">
+</parameter>
+<parameter name="suffix" type="java.lang.String">
+</parameter>
+</method>
+<method name="equals"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text1" type="java.lang.String">
+</parameter>
+<parameter name="text2" type="java.lang.String">
+</parameter>
+</method>
+<method name="hashCode"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="values" type="java.lang.String...">
+</parameter>
+</method>
+<method name="isBlank"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.String">
+</parameter>
+</method>
+<method name="isEmpty"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.String">
+</parameter>
+</method>
+<method name="isNotBlank"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.String">
+</parameter>
+</method>
+<method name="substringAfter"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.String">
+</parameter>
+<parameter name="c" type="char">
+</parameter>
+</method>
+<method name="substringAfterLast"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.String">
+</parameter>
+<parameter name="separator" type="char">
+</parameter>
+</method>
+<method name="substringBefore"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.String">
+</parameter>
+<parameter name="separator" type="char">
+</parameter>
+</method>
+<method name="substringBeforeLast"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.String">
+</parameter>
+<parameter name="separator" type="char">
+</parameter>
+</method>
+<method name="toString"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="keyValues" type="java.lang.Object...">
+</parameter>
+</method>
+</class>
+</package>
+<package name="nl.siegmann.epublib.util.commons.io"
+>
+<class name="BOMInputStream"
+ extends="nl.siegmann.epublib.util.commons.io.ProxyInputStream"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BOMInputStream"
+ type="nl.siegmann.epublib.util.commons.io.BOMInputStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="delegate" type="java.io.InputStream">
+</parameter>
+</constructor>
+<constructor name="BOMInputStream"
+ type="nl.siegmann.epublib.util.commons.io.BOMInputStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="delegate" type="java.io.InputStream">
+</parameter>
+<parameter name="include" type="boolean">
+</parameter>
+</constructor>
+<constructor name="BOMInputStream"
+ type="nl.siegmann.epublib.util.commons.io.BOMInputStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="delegate" type="java.io.InputStream">
+</parameter>
+<parameter name="boms" type="nl.siegmann.epublib.util.commons.io.ByteOrderMark...">
+</parameter>
+</constructor>
+<constructor name="BOMInputStream"
+ type="nl.siegmann.epublib.util.commons.io.BOMInputStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="delegate" type="java.io.InputStream">
+</parameter>
+<parameter name="include" type="boolean">
+</parameter>
+<parameter name="boms" type="nl.siegmann.epublib.util.commons.io.ByteOrderMark...">
+</parameter>
+</constructor>
+<method name="getBOM"
+ return="nl.siegmann.epublib.util.commons.io.ByteOrderMark"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="getBOMCharsetName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="hasBOM"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="hasBOM"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bom" type="nl.siegmann.epublib.util.commons.io.ByteOrderMark">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class name="ByteOrderMark"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ByteOrderMark"
+ type="nl.siegmann.epublib.util.commons.io.ByteOrderMark"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="charsetName" type="java.lang.String">
+</parameter>
+<parameter name="bytes" type="int...">
+</parameter>
+</constructor>
+<method name="get"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pos" type="int">
+</parameter>
+</method>
+<method name="getBytes"
+ return="byte[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCharsetName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="length"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="UTF_16BE"
+ type="nl.siegmann.epublib.util.commons.io.ByteOrderMark"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="UTF_16LE"
+ type="nl.siegmann.epublib.util.commons.io.ByteOrderMark"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="UTF_8"
+ type="nl.siegmann.epublib.util.commons.io.ByteOrderMark"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="ProxyInputStream"
+ extends="java.io.FilterInputStream"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ProxyInputStream"
+ type="nl.siegmann.epublib.util.commons.io.ProxyInputStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="proxy" type="java.io.InputStream">
+</parameter>
+</constructor>
+<method name="afterRead"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="n" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="beforeRead"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="n" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="handleIOException"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="e" type="java.io.IOException">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class name="XmlStreamReader"
+ extends="java.io.Reader"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="XmlStreamReader"
+ type="nl.siegmann.epublib.util.commons.io.XmlStreamReader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="file" type="java.io.File">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</constructor>
+<constructor name="XmlStreamReader"
+ type="nl.siegmann.epublib.util.commons.io.XmlStreamReader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="is" type="java.io.InputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</constructor>
+<constructor name="XmlStreamReader"
+ type="nl.siegmann.epublib.util.commons.io.XmlStreamReader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="is" type="java.io.InputStream">
+</parameter>
+<parameter name="lenient" type="boolean">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</constructor>
+<constructor name="XmlStreamReader"
+ type="nl.siegmann.epublib.util.commons.io.XmlStreamReader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="is" type="java.io.InputStream">
+</parameter>
+<parameter name="lenient" type="boolean">
+</parameter>
+<parameter name="defaultEncoding" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</constructor>
+<constructor name="XmlStreamReader"
+ type="nl.siegmann.epublib.util.commons.io.XmlStreamReader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="url" type="java.net.URL">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</constructor>
+<constructor name="XmlStreamReader"
+ type="nl.siegmann.epublib.util.commons.io.XmlStreamReader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="conn" type="java.net.URLConnection">
+</parameter>
+<parameter name="defaultEncoding" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</constructor>
+<constructor name="XmlStreamReader"
+ type="nl.siegmann.epublib.util.commons.io.XmlStreamReader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="is" type="java.io.InputStream">
+</parameter>
+<parameter name="httpContentType" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</constructor>
+<constructor name="XmlStreamReader"
+ type="nl.siegmann.epublib.util.commons.io.XmlStreamReader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="is" type="java.io.InputStream">
+</parameter>
+<parameter name="httpContentType" type="java.lang.String">
+</parameter>
+<parameter name="lenient" type="boolean">
+</parameter>
+<parameter name="defaultEncoding" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</constructor>
+<constructor name="XmlStreamReader"
+ type="nl.siegmann.epublib.util.commons.io.XmlStreamReader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="is" type="java.io.InputStream">
+</parameter>
+<parameter name="httpContentType" type="java.lang.String">
+</parameter>
+<parameter name="lenient" type="boolean">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</constructor>
+<method name="close"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="getDefaultEncoding"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getEncoding"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="read"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="buf" type="char[]">
+</parameter>
+<parameter name="offset" type="int">
+</parameter>
+<parameter name="len" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<field name="ENCODING_PATTERN"
+ type="java.util.regex.Pattern"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="XmlStreamReaderException"
+ extends="java.io.IOException"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="XmlStreamReaderException"
+ type="nl.siegmann.epublib.util.commons.io.XmlStreamReaderException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="msg" type="java.lang.String">
+</parameter>
+<parameter name="bomEnc" type="java.lang.String">
+</parameter>
+<parameter name="xmlGuessEnc" type="java.lang.String">
+</parameter>
+<parameter name="xmlEnc" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="XmlStreamReaderException"
+ type="nl.siegmann.epublib.util.commons.io.XmlStreamReaderException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="msg" type="java.lang.String">
+</parameter>
+<parameter name="ctMime" type="java.lang.String">
+</parameter>
+<parameter name="ctEnc" type="java.lang.String">
+</parameter>
+<parameter name="bomEnc" type="java.lang.String">
+</parameter>
+<parameter name="xmlGuessEnc" type="java.lang.String">
+</parameter>
+<parameter name="xmlEnc" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getBomEncoding"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getContentTypeEncoding"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getContentTypeMime"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getXmlEncoding"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getXmlGuessEncoding"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+</package>
+<package name="nl.siegmann.epublib.utilities"
+>
+<class name="StreamWriterDelegate"
+ extends="java.lang.Object"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="javax.xml.stream.XMLStreamWriter">
+</implements>
+<constructor name="StreamWriterDelegate"
+ type="nl.siegmann.epublib.utilities.StreamWriterDelegate"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="out" type="javax.xml.stream.XMLStreamWriter">
+</parameter>
+</constructor>
+<method name="close"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="flush"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="getNamespaceContext"
+ return="javax.xml.namespace.NamespaceContext"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPrefix"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="uri" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="getProperty"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+<exception name="IllegalArgumentException" type="java.lang.IllegalArgumentException">
+</exception>
+</method>
+<method name="setDefaultNamespace"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="uri" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="setNamespaceContext"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="javax.xml.namespace.NamespaceContext">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="setPrefix"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="prefix" type="java.lang.String">
+</parameter>
+<parameter name="uri" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeAttribute"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="localName" type="java.lang.String">
+</parameter>
+<parameter name="value" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeAttribute"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="namespaceURI" type="java.lang.String">
+</parameter>
+<parameter name="localName" type="java.lang.String">
+</parameter>
+<parameter name="value" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeAttribute"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="prefix" type="java.lang.String">
+</parameter>
+<parameter name="namespaceURI" type="java.lang.String">
+</parameter>
+<parameter name="localName" type="java.lang.String">
+</parameter>
+<parameter name="value" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeCData"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="data" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeCharacters"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeCharacters"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="char[]">
+</parameter>
+<parameter name="start" type="int">
+</parameter>
+<parameter name="len" type="int">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeComment"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="data" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeDTD"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dtd" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeDefaultNamespace"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="namespaceURI" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeEmptyElement"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="localName" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeEmptyElement"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="namespaceURI" type="java.lang.String">
+</parameter>
+<parameter name="localName" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeEmptyElement"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="prefix" type="java.lang.String">
+</parameter>
+<parameter name="localName" type="java.lang.String">
+</parameter>
+<parameter name="namespaceURI" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeEndDocument"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeEndElement"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeEntityRef"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeNamespace"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="prefix" type="java.lang.String">
+</parameter>
+<parameter name="namespaceURI" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeProcessingInstruction"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="target" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeProcessingInstruction"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="target" type="java.lang.String">
+</parameter>
+<parameter name="data" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeStartDocument"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeStartDocument"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="version" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeStartDocument"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<parameter name="version" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeStartElement"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="localName" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeStartElement"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="namespaceURI" type="java.lang.String">
+</parameter>
+<parameter name="localName" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<method name="writeStartElement"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="prefix" type="java.lang.String">
+</parameter>
+<parameter name="localName" type="java.lang.String">
+</parameter>
+<parameter name="namespaceURI" type="java.lang.String">
+</parameter>
+<exception name="XMLStreamException" type="javax.xml.stream.XMLStreamException">
+</exception>
+</method>
+<field name="out"
+ type="javax.xml.stream.XMLStreamWriter"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+</package>
+</api>
