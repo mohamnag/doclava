@@ -28,6 +28,7 @@ public class Doclavax {
      */
     public static boolean start(RootDoc rootDoc) {
 
+        long startTime = System.nanoTime();
         try {
             Converter.makeInfo(rootDoc);
 
@@ -58,6 +59,8 @@ public class Doclavax {
             data.put("packages", sortedPackages);
             templateEngine.renderMetaPages(data);
 
+            long finishTime = System.nanoTime();
+            System.out.println("Docs done in " + (finishTime - startTime) / 1000000000.0 + " seconds");
             return true;
 
         } catch (Exception e) {
