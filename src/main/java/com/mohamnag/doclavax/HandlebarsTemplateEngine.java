@@ -11,6 +11,8 @@ import com.github.jknack.handlebars.io.FileTemplateLoader;
 import com.google.doclava.ClassInfo;
 import com.google.doclava.ContainerInfo;
 import com.google.doclava.PackageInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -23,6 +25,7 @@ import java.util.Collection;
  */
 public class HandlebarsTemplateEngine implements TemplateEngine {
 
+    private static final Logger logger = LoggerFactory.getLogger(HandlebarsTemplateEngine.class);
     // TODO: 15/08/16 make this a settable param, make sure ends in /
     private static final String OUTPUT_ROOT = "output/hbs/";
     // TODO: 15/08/16 make this a settable param, make sure ends in /
@@ -56,7 +59,7 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
             template.apply(context, outputFile);
             outputFile.close();
 
-            System.out.println("Compiled " + templateFile.getCanonicalPath() + " to " + outputPath);
+            logger.debug("Compiled {} to {}", templateFile.getCanonicalPath(), outputPath);
         }
     }
 
@@ -148,7 +151,7 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
         template.apply(context, outputFileWriter);
         outputFileWriter.close();
 
-        System.out.println("Compiled and wrote page " + outputFile.getCanonicalPath());
+        logger.debug("Compiled and wrote page {}", outputFile.getCanonicalPath());
     }
 
 }
