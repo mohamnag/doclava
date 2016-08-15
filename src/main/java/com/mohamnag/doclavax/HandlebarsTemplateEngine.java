@@ -9,6 +9,7 @@ import com.github.jknack.handlebars.io.FileTemplateLoader;
 import com.google.doclava.ClassInfo;
 import com.google.doclava.ContainerInfo;
 import com.google.doclava.PackageInfo;
+import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +17,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Collection;
 
 /**
@@ -42,6 +44,7 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
 
         // TODO: 15/08/16 remove Java helpers and use JS helpers when fixed: https://github.com/jknack/handlebars.java/issues/532
         registerLinkToHelper(handlebars);
+        registerPathToRoot(handlebars);
 //        registerJsHelpers(handlebars);
     }
 
@@ -59,6 +62,27 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
                 }
 
                 return result.toString();
+            }
+        });
+    }
+
+    private static void registerPathToRoot(Handlebars handlebars) {
+        handlebars.registerHelper("pathToRoot", (context, options) -> {
+            StringBuffer result = new StringBuffer();
+
+            if (context instanceof ContainerInfo) {
+
+                String[] parts = ((ContainerInfo) context).qualifiedName().split("\\.");
+                String separator = "/";
+                for (String part : parts) {
+                    result.append("..");
+                    result.append(separator);
+                }
+
+                return result.toString();
+
+            } else {
+                return "";
             }
         });
     }
@@ -103,6 +127,28 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
             outputFile.close();
 
             logger.debug("Compiled {} to {}", templateFile.getCanonicalPath(), outputPath);
+        }
+
+        copyAssets(inputDir);
+    }
+
+    /**
+     * This moves all assets directories (the ones not starting with _) to output.
+     *
+     * @param inputDir
+     */
+    private void copyAssets(File inputDir) throws IOException {
+        File[] potAssetDirs = inputDir.listFiles(
+                (dir, name) -> name.length() > 1 && !name.startsWith("_"));
+
+        Path outputPath = new File(OUTPUT_ROOT).toPath();
+
+        for (File potAssetDir : potAssetDirs) {
+            if (potAssetDir.isDirectory()) {
+                FileUtils.copyDirectory(
+                        potAssetDir,
+                        outputPath.resolve(potAssetDir.getName()).toFile());
+            }
         }
     }
 
@@ -149,7 +195,7 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
     public void renderRootClassPages(Collection<ClassInfo> rootClasses) throws IOException {
 
         Template template = handlebars.compile(
-                        CLASS_TEMPLATE_FILE.substring(0, CLASS_TEMPLATE_FILE.length() - 4));
+                CLASS_TEMPLATE_FILE.substring(0, CLASS_TEMPLATE_FILE.length() - 4));
 
         for (ClassInfo classInfo : rootClasses) {
             compileContainerPage(
@@ -166,7 +212,7 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
     public void renderPackagePages(Collection<PackageInfo> packages) throws IOException {
 
         Template template = handlebars.compile(
-                        PACKAGE_TEMPLATE_FILE.substring(0, PACKAGE_TEMPLATE_FILE.length() - 4));
+                PACKAGE_TEMPLATE_FILE.substring(0, PACKAGE_TEMPLATE_FILE.length() - 4));
 
         for (PackageInfo packageInfo : packages) {
             compileContainerPage(
