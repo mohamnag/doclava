@@ -1,3 +1,4 @@
+{{> _partials/base}}
 {{!
 
     Context of this page has two root values:
@@ -5,20 +6,24 @@
         - packages: a sorted list of all packages as PackageInfo objects
 
 }}
+{{#*inline "content" }}
+    <p>Home page</p>
 
-<ul>
-    {{#each packages}}
-        <li>
-            <h2>
-                <a href="{{linkTo this}}">{{qualifiedName}}</a>
-            </h2>
-            <ul>
-                {{#each allClasses}}
-                    <li>
-                        <a href="{{linkTo this}}">{{qualifiedName}}</a>
-                    </li>
-                {{/each}}
-            </ul>
-        </li>
-    {{/each}}
-</ul>
+    <ul>
+        {{#each packages}}
+            <li>
+                <h2>
+                    <a href="{{linkTo this}}">{{qualifiedName}}</a>
+                </h2>
+                <ul>
+                    {{#each allClasses}}
+                        <li>
+                            <a href="{{linkTo this}}">{{qualifiedName}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </li>
+        {{/each}}
+    </ul>
+{{/inline}}
+

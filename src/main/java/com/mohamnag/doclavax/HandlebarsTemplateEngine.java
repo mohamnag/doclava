@@ -33,10 +33,12 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
     private static final String CLASS_TEMPLATE_FILE = "class.hbs";
     private static final String PACKAGE_TEMPLATE_FILE = "package.hbs";
     private final Handlebars handlebars;
+    private File inputDir;
 
     public HandlebarsTemplateEngine() throws Exception {
-        handlebars = new Handlebars(new FileTemplateLoader("/"));
-
+        inputDir = getValidInputDir();
+        FileTemplateLoader templateLoader = new FileTemplateLoader(inputDir);
+        handlebars = new Handlebars(templateLoader);
 
         // TODO: 15/08/16 remove Java helpers and use JS helpers when fixed: https://github.com/jknack/handlebars.java/issues/532
         registerLinkToHelper(handlebars);
@@ -85,14 +87,14 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
     public void renderMetaPages(Object data) throws IOException {
 
         Context context = getPreparedContext(data);
-        File inputDir = getValidInputDir();
+
         // TODO: (LOW) 15/08/16 support recursive inner dirs too
         File[] allTemplates = getAllNonSpecialTemplates(inputDir);
 
         for (File templateFile : allTemplates) {
             String templateFileName = templateFile.getName();
             String templateFileNameNoExt = templateFileName.substring(0, templateFileName.lastIndexOf('.'));
-            Template template = handlebars.compile(templateFile.getParentFile().getCanonicalPath() + File.separator + templateFileNameNoExt);
+            Template template = handlebars.compile(templateFileNameNoExt);
 
             String outputPath = OUTPUT_ROOT + templateFileNameNoExt + OUTPUT_EXTENSION;
             FileWriter outputFile = new FileWriter(outputPath);
@@ -146,11 +148,7 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
     @Override
     public void renderRootClassPages(Collection<ClassInfo> rootClasses) throws IOException {
 
-        File inputDir = getValidInputDir();
-
         Template template = handlebars.compile(
-                inputDir.getCanonicalPath() +
-                        File.separator +
                         CLASS_TEMPLATE_FILE.substring(0, CLASS_TEMPLATE_FILE.length() - 4));
 
         for (ClassInfo classInfo : rootClasses) {
@@ -167,11 +165,7 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
     @Override
     public void renderPackagePages(Collection<PackageInfo> packages) throws IOException {
 
-        File inputDir = getValidInputDir();
-
         Template template = handlebars.compile(
-                inputDir.getCanonicalPath() +
-                        File.separator +
                         PACKAGE_TEMPLATE_FILE.substring(0, PACKAGE_TEMPLATE_FILE.length() - 4));
 
         for (PackageInfo packageInfo : packages) {
