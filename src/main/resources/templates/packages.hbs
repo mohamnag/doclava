@@ -1,0 +1,20 @@
+{{!
+
+    Context of this page has two root values:
+        - rootClasses: a sorted list of root classes as ClassInfo objects
+        - packages: a sorted list of all packages as PackageInfo objects
+
+}}
+
+<ul>
+    {{#each packages}}
+        <li>
+            <h2>{{ name }}</h2>
+            <ul>
+            {{#each allClasses}}
+                <li>{{ qualifiedName }}</li>
+            {{/each}}
+            </ul>
+        </li>
+    {{/each}}
+</ul>

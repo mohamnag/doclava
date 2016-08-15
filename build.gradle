@@ -25,6 +25,13 @@ dependencies {
 	compile files(System.env["JAVA_HOME"] + "/lib/tools.jar")
 	compile 'com.google.guava:guava:18.0'
 	compile 'com.google.jsilver:jsilver:1.0.0'
+
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.7.4'
+	compile 'org.slf4j:slf4j-api:1.7.21'
+	compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.5'
+	compile 'org.apache.logging.log4j:log4j-core:2.5'
+
+	compile 'com.github.jknack:handlebars:4.0.5'
 }
 
 jar {

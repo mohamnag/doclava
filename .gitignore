@@ -38,3 +38,5 @@ local.properties
 proguard/
 
 output/
+_site/
+.sass-cache/
