@@ -1,8 +1,6 @@
 package com.mohamnag.doclavax;
 
-import com.github.jknack.handlebars.Context;
-import com.github.jknack.handlebars.Handlebars;
-import com.github.jknack.handlebars.Template;
+import com.github.jknack.handlebars.*;
 import com.github.jknack.handlebars.context.FieldValueResolver;
 import com.github.jknack.handlebars.context.JavaBeanValueResolver;
 import com.github.jknack.handlebars.context.MapValueResolver;
@@ -36,8 +34,51 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
     private static final String PACKAGE_TEMPLATE_FILE = "package.hbs";
     private final Handlebars handlebars;
 
-    public HandlebarsTemplateEngine() throws IOException {
+    public HandlebarsTemplateEngine() throws Exception {
         handlebars = new Handlebars(new FileTemplateLoader("/"));
+
+
+        // TODO: 15/08/16 remove Java helpers and use JS helpers when fixed: https://github.com/jknack/handlebars.java/issues/532
+        registerLinkToHelper(handlebars);
+//        registerJsHelpers(handlebars);
+    }
+
+    private static void registerLinkToHelper(Handlebars handlebars) {
+        handlebars.registerHelper("linkTo", new Helper<ContainerInfo>() {
+            @Override
+            public CharSequence apply(ContainerInfo context, Options options) throws IOException {
+                StringBuffer result = new StringBuffer();
+
+                String[] parts = context.qualifiedName().split("\\.");
+                String separator = "/";
+                for (String part : parts) {
+                    result.append(part);
+                    result.append(separator);
+                }
+
+                return result.toString();
+            }
+        });
+    }
+
+    private static void registerJsHelpers(Handlebars handlebars) throws Exception {
+        File helperDir = new File(INPUT_ROOT + "_helpers");
+        if (!helperDir.exists() || !helperDir.isDirectory()) {
+            logger.warn("Helper dir {} not found, skipping helper registry", helperDir.getCanonicalPath());
+
+        } else {
+            File[] helperFiles = helperDir.listFiles(new FilenameFilter() {
+                @Override
+                public boolean accept(File dir, String name) {
+                    return name.length() > 3 && name.substring(name.length() - 3).equals(".js");
+                }
+            });
+
+            for (File helperFile : helperFiles) {
+                handlebars.registerHelpers(helperFile);
+                logger.debug("Registered helper from {}", helperFile.getCanonicalPath());
+            }
+        }
     }
 
     @Override
@@ -113,7 +154,13 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
                         CLASS_TEMPLATE_FILE.substring(0, CLASS_TEMPLATE_FILE.length() - 4));
 
         for (ClassInfo classInfo : rootClasses) {
-            compileContainerPage(classInfo, template, new File(OUTPUT_ROOT + classInfo.qualifiedName().replaceAll("\\.", File.separator) + OUTPUT_EXTENSION));
+            compileContainerPage(
+                    classInfo,
+                    template,
+                    new File(OUTPUT_ROOT +
+                            classInfo.qualifiedName().replaceAll("\\.", File.separator) +
+                            "/index" +
+                            OUTPUT_EXTENSION));
         }
     }
 
@@ -133,8 +180,7 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
                     template,
                     new File(OUTPUT_ROOT +
                             packageInfo.qualifiedName().replaceAll("\\.", File.separator) +
-                            File.separator +
-                            "index" +
+                            "/index" +
                             OUTPUT_EXTENSION));
         }
     }

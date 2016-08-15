@@ -9,11 +9,15 @@
 <ul>
     {{#each packages}}
         <li>
-            <h2>{{ name }}</h2>
+            <h2>
+                <a href="{{linkTo this}}">{{qualifiedName}}</a>
+            </h2>
             <ul>
-            {{#each allClasses}}
-                <li>{{ qualifiedName }}</li>
-            {{/each}}
+                {{#each allClasses}}
+                    <li>
+                        <a href="{{linkTo this}}">{{qualifiedName}}</a>
+                    </li>
+                {{/each}}
             </ul>
         </li>
     {{/each}}
