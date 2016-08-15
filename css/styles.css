@@ -612,7 +612,9 @@ strong {
 }
 
 section img {
-  max-width: 100%;
+  max-width: 47%;
+  vertical-align: top;
+  margin: 1%;
 }
 
 blockquote {
