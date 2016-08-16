@@ -58,7 +58,7 @@ public class Doclavax {
             renderMetaPages(sortedPackages, sortedRootClasses, templateEngine);
 
             long finishTime = System.nanoTime();
-            System.out.println("Docs done in " + (finishTime - startTime) / 1000000000.0 + " seconds");
+            logger.trace("Docs done in " + (finishTime - startTime) / 1000000000.0 + " seconds");
             return true;
 
         } catch (Exception e) {
