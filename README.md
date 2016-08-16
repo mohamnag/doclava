@@ -1,20 +1,7 @@
-Doclava
-=======
+## An alternative Javadoc
 
-> This is a beta state code, so any kind of feedback and contribution is welcome!
+This project aims to create a better, more useful and more beautiful Javadoc
+output for your documentations.
 
-[Doclava](https://code.google.com/p/doclava/) is a new javadoc doclet 
-which is originally written by Google and used for  Android Developer
-Docs. Clear and efficient.
-
-This project is forked from https://github.com/kwf2030/doclava and 
-therefore indirectly from https://code.google.com/p/doclava/.
- 
-To get an overview of what it this project going to be, take a look at
-[the roadmap](ROADMAP.md).
-
-
-## Sample output
-
-For some screenshots, instructions and a sample doc generate by the 
-recent state of the code refer [to here](http://naghavi.me/doclava/).
+Please refer [to here](http://naghavi.me/doclava/) for details, sample output 
+and more information.
