@@ -14,9 +14,11 @@ Implementing a new look and feel with existing limitations.
     
 
 # Phase 2
-Fixing lots of data structures used in templates. Remove/reduce lazy data
-and heavy calculations in all DocInfo subclasses. Fixing not handled Java 
-8 tags.
+Fixing & migrating lots of data structures used in templates. Remove/reduce 
+lazy data and heavy calculations in all DocInfo subclasses. Fixing not 
+handled Java 8 tags.
+
+Publish a Gradle plugin that generates Javadoc using this lib. 
 
 Enable JavaScript external helpers for max flexibility and freedom of 
 template writers.
