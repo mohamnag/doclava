@@ -20,21 +20,18 @@
         <p>List of all packages in this project:</p>
     </header>
 
-    <ul>
-        {{#each packages}}
-            <li>
-                <h2>
-                    <a href="{{linkTo this}}">{{qualifiedName}}</a>
-                </h2>
-                <ul>
-                    {{#each allClasses}}
-                        <li>
-                            <a href="{{linkTo this}}">{{qualifiedName}}</a>
-                        </li>
-                    {{/each}}
-                </ul>
-            </li>
-        {{/each}}
-    </ul>
+    {{#each packages as |package| }}
+            <h2>
+                <a href="{{linkTo this}}">{{qualifiedName}}</a>
+            </h2>
+            <div class="row">
+                {{> _partials/package/subclasses title='Classes' items=package.ordinaryClasses }}
+                {{> _partials/package/subclasses title='Annotations' items=package.annotations }}
+                {{> _partials/package/subclasses title='Interfaces' items=package.interfaces }}
+                {{> _partials/package/subclasses title='Exceptions' items=package.exceptions }}
+                {{> _partials/package/subclasses title='Enums' items=package.enums }}
+            </div>
+    {{/each}}
+
 {{/inline}}
 

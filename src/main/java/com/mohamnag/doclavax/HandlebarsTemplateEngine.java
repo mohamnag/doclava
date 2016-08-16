@@ -51,6 +51,7 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
 
         // TODO: 15/08/16 remove Java helpers and use JS helpers when fixed: https://github.com/jknack/handlebars.java/issues/532
         registerLinkToHelper(handlebars);
+        registerIdHelper(handlebars);
 //        registerJsHelpers(handlebars);
         classPageTemplate = handlebars.compile(
                 CLASS_TEMPLATE_FILE.substring(0, CLASS_TEMPLATE_FILE.length() - 4));
@@ -71,6 +72,11 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
 
             return result.toString();
         });
+    }
+
+    private static void registerIdHelper(Handlebars handlebars) {
+        handlebars.registerHelper("id",
+                (Helper<String>) (context, options) -> context.replaceAll("\\.", "-"));
     }
 
     private static CharSequence getPathToRoot(String qualifiedName) {
