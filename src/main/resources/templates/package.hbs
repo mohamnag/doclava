@@ -1,0 +1,28 @@
+{{> _partials/base}}
+{{!
+
+    Context of package page contains following root values:
+        - package: single package as an PackageInfo object
+        - classes: a sorted list of root classes as ClassInfo objects
+        - packages: a sorted list of all packages as PackageInfo objects
+
+    Meta data contained in context are:
+        - meta.pathToRoot: the path to root of the outputed HTML
+
+}}
+{{#*inline "content" }}
+
+    <header>
+        <h1>{{ package.qualifiedName }}</h1>
+        <p>List of package members</p>
+    </header>
+
+    <div class="row">
+        {{> _partials/package/subclasses title='Classes' items=package.ordinaryClasses }}
+        {{> _partials/package/subclasses title='Annotations' items=package.annotations }}
+        {{> _partials/package/subclasses title='Interfaces' items=package.interfaces }}
+        {{> _partials/package/subclasses title='Exceptions' items=package.exceptions }}
+        {{> _partials/package/subclasses title='Enums' items=package.enums }}
+    </div>
+
+{{/inline}}

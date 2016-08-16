@@ -1,0 +1,16 @@
+{{#if items}}
+    <div class="col-sm-6">
+        <h3>{{title}}</h3>
+
+        <ul class="list-group">
+            {{#each items}}
+                <li class="list-group-item">
+                    <h5>
+                        <a href="{{meta.pathToRoot}}{{linkTo this}}">{{ leafName }}</a>
+                    </h5>
+                    {{> _partials/class/tag_to_text tags=comment.briefTags}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+{{/if}}
