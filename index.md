@@ -1,13 +1,10 @@
 ---
 layout: page
-title: Doclavax
-shortDescription: a modern javadoc alternative
+title: An alternative Javadoc
 ---
 
 > This is a beta state code, so any kind of feedback and contribution is
  welcome!
-
-## An alternative Javadoc
 
 Javadoc is (or at least may be) the most important asset that any Java 
 developer may deliver beside the code and the product. However the current 

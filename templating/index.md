@@ -1,8 +1,10 @@
 ---
 layout: page
 title: Templating guide
-shortDescription: a modern javadoc alternative
 ---
+
+Following gives you the idea of how the templating works. This is necessary
+if you want to modify or replace the templates.
 
 ## Template engines
 Job of applying extracted data to templates and generating final 

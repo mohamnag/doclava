@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Handlebars templates guide
-shortDescription: a modern javadoc alternative
 ---
 
 If you are unfamiliar with handlebars, we recommend taking a look at 

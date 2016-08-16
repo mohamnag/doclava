@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Roadmap
-shortDescription: a modern javadoc alternative
 ---
 
 # Phase 1
