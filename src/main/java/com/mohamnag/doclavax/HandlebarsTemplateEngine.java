@@ -1,6 +1,9 @@
 package com.mohamnag.doclavax;
 
-import com.github.jknack.handlebars.*;
+import com.github.jknack.handlebars.Context;
+import com.github.jknack.handlebars.Handlebars;
+import com.github.jknack.handlebars.Helper;
+import com.github.jknack.handlebars.Template;
 import com.github.jknack.handlebars.context.FieldValueResolver;
 import com.github.jknack.handlebars.context.JavaBeanValueResolver;
 import com.github.jknack.handlebars.context.MapValueResolver;
@@ -19,6 +22,8 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by mohamnag on 15/08/16.
@@ -36,6 +41,8 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
     private static final String PACKAGE_TEMPLATE_FILE = "package.hbs";
     private final Handlebars handlebars;
     private File inputDir;
+    private final Template classPageTemplate;
+    private final Template packagePageTemplate;
 
     public HandlebarsTemplateEngine() throws Exception {
         inputDir = getValidInputDir();
@@ -44,47 +51,38 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
 
         // TODO: 15/08/16 remove Java helpers and use JS helpers when fixed: https://github.com/jknack/handlebars.java/issues/532
         registerLinkToHelper(handlebars);
-        registerPathToRoot(handlebars);
 //        registerJsHelpers(handlebars);
+        classPageTemplate = handlebars.compile(
+                CLASS_TEMPLATE_FILE.substring(0, CLASS_TEMPLATE_FILE.length() - 4));
+        packagePageTemplate = handlebars.compile(
+                PACKAGE_TEMPLATE_FILE.substring(0, PACKAGE_TEMPLATE_FILE.length() - 4));
     }
 
     private static void registerLinkToHelper(Handlebars handlebars) {
-        handlebars.registerHelper("linkTo", new Helper<ContainerInfo>() {
-            @Override
-            public CharSequence apply(ContainerInfo context, Options options) throws IOException {
-                StringBuffer result = new StringBuffer();
+        handlebars.registerHelper("linkTo", (Helper<ContainerInfo>) (context, options) -> {
 
-                String[] parts = context.qualifiedName().split("\\.");
-                String separator = "/";
-                for (String part : parts) {
-                    result.append(part);
-                    result.append(separator);
-                }
+            StringBuilder result = new StringBuilder();
 
-                return result.toString();
+            String[] parts = context.qualifiedName().split("\\.");
+            for (String part : parts) {
+                result.append(part);
+                result.append("/");
             }
+
+            return result.toString();
         });
     }
 
-    private static void registerPathToRoot(Handlebars handlebars) {
-        handlebars.registerHelper("pathToRoot", (context, options) -> {
-            StringBuffer result = new StringBuffer();
+    private static CharSequence getPathToRoot(String qualifiedName) {
+        StringBuilder result = new StringBuilder();
+        String[] parts = qualifiedName.split("\\.");
+        String separator = "/";
+        for (String part : parts) {
+            result.append("..");
+            result.append(separator);
+        }
 
-            if (context instanceof ContainerInfo) {
-
-                String[] parts = ((ContainerInfo) context).qualifiedName().split("\\.");
-                String separator = "/";
-                for (String part : parts) {
-                    result.append("..");
-                    result.append(separator);
-                }
-
-                return result.toString();
-
-            } else {
-                return "";
-            }
-        });
+        return result.toString();
     }
 
     private static void registerJsHelpers(Handlebars handlebars) throws Exception {
@@ -108,7 +106,55 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
     }
 
     @Override
-    public void renderMetaPages(Object data) throws IOException {
+    public void renderPackagePage(PackageInfo packageInfo, Collection<PackageInfo> packageInfos, Collection<ClassInfo> classInfos) throws IOException {
+        HashMap<String, Object> data = new HashMap<>(3);
+        data.put("package", packageInfo);
+        data.put("packages", packageInfos);
+        data.put("classes", classInfos);
+
+        Map<String, Object> meta = new HashMap<>();
+        meta.put("pathToRoot", getPathToRoot(packageInfo.qualifiedName()));
+        data.put("meta", meta);
+
+        compileContainerPage(
+                data,
+                packagePageTemplate,
+                new File(OUTPUT_ROOT +
+                        packageInfo.qualifiedName().replaceAll("\\.", File.separator) +
+                        "/index" +
+                        OUTPUT_EXTENSION));
+    }
+
+    @Override
+    public void renderRootClassPage(ClassInfo classInfo, Collection<PackageInfo> packageInfos, Collection<ClassInfo> classInfos) throws IOException {
+        HashMap<String, Object> data = new HashMap<>(3);
+        data.put("class", classInfo);
+        data.put("packages", packageInfos);
+        data.put("classes", classInfos);
+
+        Map<String, Object> meta = new HashMap<>();
+        meta.put("pathToRoot", getPathToRoot(classInfo.qualifiedName()));
+        data.put("meta", meta);
+
+        compileContainerPage(
+                data,
+                classPageTemplate,
+                new File(OUTPUT_ROOT +
+                        classInfo.qualifiedName().replaceAll("\\.", File.separator) +
+                        "/index" +
+                        OUTPUT_EXTENSION));
+    }
+
+    @Override
+    public void renderMetaPages(Collection<PackageInfo> packageInfos, Collection<ClassInfo> classInfos) throws IOException {
+        Map<String, Object> data = new HashMap<>();
+        data.put("classes", classInfos);
+        data.put("packages", packageInfos);
+
+        Map<String, Object> meta = new HashMap<>();
+        // for now fixed empty, as all are on root
+        meta.put("pathToRoot", "");
+        data.put("meta", meta);
 
         Context context = getPreparedContext(data);
 
@@ -130,7 +176,9 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
         }
 
         copyAssets(inputDir);
+
     }
+
 
     /**
      * This moves all assets directories (the ones not starting with _) to output.
@@ -153,18 +201,15 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
     }
 
     private File[] getAllNonSpecialTemplates(File inputDir) {
-        return inputDir.listFiles(new FilenameFilter() {
-            @Override
-            public boolean accept(File dir, String name) {
-                // Select all templates except our special cases
-                return (
-                        !name.equals(CLASS_TEMPLATE_FILE) &&
-                                !name.equals(PACKAGE_TEMPLATE_FILE)
-                ) && (
-                        name.length() > 4 &&
-                                name.substring(name.length() - 4).equals(".hbs")
-                );
-            }
+        return inputDir.listFiles((dir, name) -> {
+            // Select all templates except our special cases
+            return (
+                    !name.equals(CLASS_TEMPLATE_FILE) &&
+                            !name.equals(PACKAGE_TEMPLATE_FILE)
+            ) && (
+                    name.length() > 4 &&
+                            name.substring(name.length() - 4).equals(".hbs")
+            );
         });
     }
 
@@ -191,43 +236,9 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
         return inputDir;
     }
 
-    @Override
-    public void renderRootClassPages(Collection<ClassInfo> rootClasses) throws IOException {
+    private void compileContainerPage(Object data, Template template, File outputFile) throws IOException {
 
-        Template template = handlebars.compile(
-                CLASS_TEMPLATE_FILE.substring(0, CLASS_TEMPLATE_FILE.length() - 4));
-
-        for (ClassInfo classInfo : rootClasses) {
-            compileContainerPage(
-                    classInfo,
-                    template,
-                    new File(OUTPUT_ROOT +
-                            classInfo.qualifiedName().replaceAll("\\.", File.separator) +
-                            "/index" +
-                            OUTPUT_EXTENSION));
-        }
-    }
-
-    @Override
-    public void renderPackagePages(Collection<PackageInfo> packages) throws IOException {
-
-        Template template = handlebars.compile(
-                PACKAGE_TEMPLATE_FILE.substring(0, PACKAGE_TEMPLATE_FILE.length() - 4));
-
-        for (PackageInfo packageInfo : packages) {
-            compileContainerPage(
-                    packageInfo,
-                    template,
-                    new File(OUTPUT_ROOT +
-                            packageInfo.qualifiedName().replaceAll("\\.", File.separator) +
-                            "/index" +
-                            OUTPUT_EXTENSION));
-        }
-    }
-
-    private void compileContainerPage(ContainerInfo packageInfo, Template template, File outputFile) throws IOException {
-
-        Context context = getPreparedContext(packageInfo);
+        Context context = getPreparedContext(data);
         File parentDir = outputFile.getParentFile();
         if (!parentDir.exists() && !parentDir.mkdirs()) {
             throw new RuntimeException("Could not make the necessary directories for output: " + parentDir.getCanonicalPath());

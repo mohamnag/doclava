@@ -7,7 +7,9 @@ import com.sun.javadoc.RootDoc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.*;
+import java.io.IOException;
+import java.util.Collection;
+import java.util.TreeMap;
 
 /**
  * Created by mohamnag on 15/08/16.
@@ -51,13 +53,9 @@ public class Doclavax {
 
             TemplateEngine templateEngine = new HandlebarsTemplateEngine();
 
-            templateEngine.renderRootClassPages(sortedRootClasses.values());
-            templateEngine.renderPackagePages(sortedPackages.values());
-
-            Map<String, Object> data = new HashMap<String, Object>();
-            data.put("rootClasses", sortedRootClasses);
-            data.put("packages", sortedPackages);
-            templateEngine.renderMetaPages(data);
+            renderClassPages(sortedPackages, sortedRootClasses, templateEngine);
+            renderPackagePages(sortedPackages, sortedRootClasses, templateEngine);
+            renderMetaPages(sortedPackages, sortedRootClasses, templateEngine);
 
             long finishTime = System.nanoTime();
             System.out.println("Docs done in " + (finishTime - startTime) / 1000000000.0 + " seconds");
@@ -66,6 +64,37 @@ public class Doclavax {
         } catch (Exception e) {
             logger.error("Could not generate docs", e);
             return false;
+        }
+    }
+
+    private static void renderMetaPages(TreeMap<String, PackageInfo> sortedPackages,
+                                        TreeMap<String, ClassInfo> sortedRootClasses,
+                                        TemplateEngine templateEngine) throws IOException {
+
+        templateEngine.renderMetaPages(sortedPackages.values(), sortedRootClasses.values());
+    }
+
+    private static void renderPackagePages(TreeMap<String, PackageInfo> sortedPackages,
+                                           TreeMap<String, ClassInfo> sortedRootClasses,
+                                           TemplateEngine templateEngine) throws IOException {
+
+        Collection<ClassInfo> classInfos = sortedRootClasses.values();
+        Collection<PackageInfo> packageInfos = sortedPackages.values();
+
+        for (PackageInfo packageInfo : sortedPackages.values()) {
+            templateEngine.renderPackagePage(packageInfo, packageInfos, classInfos);
+        }
+    }
+
+    private static void renderClassPages(TreeMap<String, PackageInfo> sortedPackages,
+                                         TreeMap<String, ClassInfo> sortedRootClasses,
+                                         TemplateEngine templateEngine) throws IOException {
+
+        Collection<ClassInfo> classInfos = sortedRootClasses.values();
+        Collection<PackageInfo> packageInfos = sortedPackages.values();
+
+        for (ClassInfo classInfo : classInfos) {
+            templateEngine.renderRootClassPage(classInfo, packageInfos, classInfos);
         }
     }
 

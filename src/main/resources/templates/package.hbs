@@ -1,11 +1,17 @@
 {{> _partials/base}}
 {{!
 
-    Context of this page are each of single classes as an ClassInfo object
+    Context of package page contains following root values:
+        - package: single package as an PackageInfo object
+        - classes: a sorted list of root classes as ClassInfo objects
+        - packages: a sorted list of all packages as PackageInfo objects
+
+    Meta data contained in context are:
+        - meta.pathToRoot: the path to root of the outputed HTML
 
 }}
 {{#*inline "content" }}
 
-    Package file for <h1>{{ name }}</h1>
+    Package file for <h1>{{ package.qualifiedName }}</h1>
 
 {{/inline}}
