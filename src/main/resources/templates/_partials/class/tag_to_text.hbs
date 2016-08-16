@@ -1,0 +1,21 @@
+{{!
+    compiles a list of javadoc tags including text block(s) itself into a text
+    for each known tag an inline block should be define (with wished output
+    syntax).
+}}
+{{#each tags as |tag|}}
+
+    {{#*inline "Text" }}
+        {{mText}}
+    {{/inline}}
+
+    {{#*inline "@code" }}
+        <span class="label label-primary">
+            code |
+            {{mText}}
+        </span>
+    {{/inline}}
+
+    {{> (lookup this 'mKind') }}
+
+{{/each}}
