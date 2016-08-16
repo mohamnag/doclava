@@ -13,9 +13,9 @@ public interface TemplateEngine {
 
     /**
      * Renders a single package page with given data containing:
-     * - rootClasses ~> all root classes
-     * - packages ~> all packages
-     * - package ~> current package
+     * - rootClasses: all root classes
+     * - packages: all packages
+     * - package: current package
      *
      * @param packageInfo  current package
      * @param classInfos   all root classes
@@ -25,9 +25,9 @@ public interface TemplateEngine {
 
     /**
      * Renders a single class page with given data containing:
-     * - rootClasses ~> all root classes
-     * - packages ~> all packages
-     * - class ~> current class
+     * - rootClasses: all root classes
+     * - packages: all packages
+     * - class: current class
      *
      * @param classInfo    current class
      * @param classInfos   all root classes
