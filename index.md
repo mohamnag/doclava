@@ -18,8 +18,10 @@ We believe even technical people deserve a modern look and feel in their
 daily work. Therefore this project aims to provide a modern alternative 
 for standard Javadoc.
 
-> You can view a sample documentation output [here](sample/). Bear in 
- mind that the code is still in beta status.
+
+## Sample output
+You can view a sample documentation output [here](sample/). Bear in mind 
+that the code is still in beta status and may change very fast.
 
 ![package details page](images/package-details-sc.png) ![packages page](images/packages-sc.png)
 
