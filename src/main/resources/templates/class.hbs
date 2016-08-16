@@ -12,6 +12,25 @@
 }}
 {{#*inline "content" }}
 
-    Class file for <h1>{{ class.qualifiedName }}</h1>
+    <header>
+        <h1>
+            {{ class.qualifiedName }}
+        </h1>
+
+        <span class="label label-default">
+            {{#if class.isInterface}}
+                interface
+            {{/if}}
+
+            {{#if class.isOrdinaryClass}}
+                {{#if class.isAbstract}}
+                    abstract
+                {{/if}}
+
+                class
+            {{/if}}
+        </span>
+    </header>
+
 
 {{/inline}}

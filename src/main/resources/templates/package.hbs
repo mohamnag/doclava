@@ -12,6 +12,16 @@
 }}
 {{#*inline "content" }}
 
-    Package file for <h1>{{ package.qualifiedName }}</h1>
+    <header>
+        <h1>
+            {{ package.qualifiedName }}
+        </h1>
+    </header>
+
+    {{> _partials/package/subclasses title='Annotations' items=package.annotations }}
+    {{> _partials/package/subclasses title='Interfaces' items=package.interfaces }}
+    {{> _partials/package/subclasses title='Exceptions' items=package.exceptions }}
+    {{> _partials/package/subclasses title='Classes' items=package.ordinaryClasses }}
+    {{> _partials/package/subclasses title='Enums' items=package.enums }}
 
 {{/inline}}
