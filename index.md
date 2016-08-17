@@ -18,22 +18,22 @@ We believe even technical people deserve a modern look and feel in their
 daily work. Therefore this project aims to provide a modern alternative 
 for standard Javadoc.
 
+This project intends to provide a way to generate **highly customizable**
+javadoc output which can be simply modified and changed. In addition a 
+default theme will be provided which look good enough to start with but
+is never meant to be *the only solution*.
 
 ## Sample output
 You can view a sample documentation output [here](sample/). Bear in mind 
-that the code is still in beta status and may change very fast.
-
-![package details page](images/package-details-sc.png) ![packages page](images/packages-sc.png)
-
+that the code is still in beta status and output may change very fast.
 
 ## Origins and future
 
+This project is forked from [kwf2030/doclava](https://github.com/kwf2030/doclava)
+and therefore indirectly from [Google's doclava](https://code.google.com/p/doclava/).
 [Doclava](https://code.google.com/p/doclava/) was a javadoc doclet which 
 was originally written by Google and used for  Android Developer Docs. 
 Clear and efficient.
-
-This project is forked from [kwf2030/doclava](https://github.com/kwf2030/doclava)
-and therefore indirectly from [Google's doclava](https://code.google.com/p/doclava/).
  
 To get an overview of where this project stands and what it is going to 
 be in near future, take a look at [the roadmap](roadmap/).
