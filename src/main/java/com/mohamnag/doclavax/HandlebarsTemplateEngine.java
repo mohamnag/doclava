@@ -2,15 +2,12 @@ package com.mohamnag.doclavax;
 
 import com.github.jknack.handlebars.Context;
 import com.github.jknack.handlebars.Handlebars;
-import com.github.jknack.handlebars.Helper;
 import com.github.jknack.handlebars.Template;
 import com.github.jknack.handlebars.context.FieldValueResolver;
 import com.github.jknack.handlebars.context.JavaBeanValueResolver;
 import com.github.jknack.handlebars.context.MapValueResolver;
-import com.github.jknack.handlebars.context.MethodValueResolver;
 import com.github.jknack.handlebars.io.FileTemplateLoader;
 import com.google.doclava.ClassInfo;
-import com.google.doclava.ContainerInfo;
 import com.google.doclava.PackageInfo;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
@@ -37,6 +34,8 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
     private static final String INPUT_ROOT = "src/main/resources/templates/";
     // TODO: 15/08/16 make this settable as a param
     private static final String OUTPUT_EXTENSION = ".html";
+    // used for meta page outputs that are NOT an index themselves
+    private static final String INDEX_OUTPUT_EXTENSION = File.separator + "index" + OUTPUT_EXTENSION;
     private static final String CLASS_TEMPLATE_FILE = "class.hbs";
     private static final String PACKAGE_TEMPLATE_FILE = "package.hbs";
     private final Handlebars handlebars;
@@ -49,43 +48,23 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
         FileTemplateLoader templateLoader = new FileTemplateLoader(inputDir);
         handlebars = new Handlebars(templateLoader);
 
-        // TODO: 15/08/16 remove Java helpers and use JS helpers when fixed: https://github.com/jknack/handlebars.java/issues/532
-        registerLinkToHelper(handlebars);
-        registerIdHelper(handlebars);
-//        registerJsHelpers(handlebars);
+        // register JS helpers
+        registerJsHelpers(handlebars);
+
+        // compile least needed templates (makes sure they exists)
         classPageTemplate = handlebars.compile(
                 CLASS_TEMPLATE_FILE.substring(0, CLASS_TEMPLATE_FILE.length() - 4));
+
         packagePageTemplate = handlebars.compile(
                 PACKAGE_TEMPLATE_FILE.substring(0, PACKAGE_TEMPLATE_FILE.length() - 4));
-    }
-
-    private static void registerLinkToHelper(Handlebars handlebars) {
-        handlebars.registerHelper("linkTo", (Helper<ContainerInfo>) (context, options) -> {
-
-            StringBuilder result = new StringBuilder();
-
-            String[] parts = context.qualifiedName().split("\\.");
-            for (String part : parts) {
-                result.append(part);
-                result.append("/");
-            }
-
-            return result.toString();
-        });
-    }
-
-    private static void registerIdHelper(Handlebars handlebars) {
-        handlebars.registerHelper("id",
-                (Helper<String>) (context, options) -> context.replaceAll("\\.", "-"));
     }
 
     private static CharSequence getPathToRoot(String qualifiedName) {
         StringBuilder result = new StringBuilder();
         String[] parts = qualifiedName.split("\\.");
-        String separator = "/";
+
         for (String part : parts) {
-            result.append("..");
-            result.append(separator);
+            result.append("../");
         }
 
         return result.toString();
@@ -158,11 +137,7 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
         data.put("packages", packageInfos);
 
         Map<String, Object> meta = new HashMap<>();
-        // for now fixed empty, as all are on root
-        meta.put("pathToRoot", "");
         data.put("meta", meta);
-
-        Context context = getPreparedContext(data);
 
         // TODO: (LOW) 15/08/16 support recursive inner dirs too
         File[] allTemplates = getAllNonSpecialTemplates(inputDir);
@@ -172,19 +147,23 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
             String templateFileNameNoExt = templateFileName.substring(0, templateFileName.lastIndexOf('.'));
             Template template = handlebars.compile(templateFileNameNoExt);
 
-            String outputPath = OUTPUT_ROOT + templateFileNameNoExt + OUTPUT_EXTENSION;
-            FileWriter outputFile = new FileWriter(outputPath);
+            // TODO: (LOW) 17/08/16 pathToRoot should be set based on dir level when recursive inner dirs are supported
+            String outputPath = OUTPUT_ROOT + templateFileNameNoExt;
+            if (!"index".equals(templateFileNameNoExt)) {
+                meta.put("pathToRoot", "../");
+                outputPath += INDEX_OUTPUT_EXTENSION;
 
-            template.apply(context, outputFile);
-            outputFile.close();
+            } else {
+                meta.put("pathToRoot", "");
+                outputPath += OUTPUT_EXTENSION;
+            }
 
-            logger.debug("Compiled {} to {}", templateFile.getCanonicalPath(), outputPath);
+            compileContainerPage(data, template, new File(outputPath));
         }
 
         copyAssets(inputDir);
 
     }
-
 
     /**
      * This moves all assets directories (the ones not starting with _) to output.
@@ -208,7 +187,7 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
 
     private File[] getAllNonSpecialTemplates(File inputDir) {
         return inputDir.listFiles((dir, name) -> {
-            // Select all templates except our special cases
+            // Select all templates except our special cases: class & package
             return (
                     !name.equals(CLASS_TEMPLATE_FILE) &&
                             !name.equals(PACKAGE_TEMPLATE_FILE)
@@ -223,7 +202,7 @@ public class HandlebarsTemplateEngine implements TemplateEngine {
         return Context
                 .newBuilder(data)
                 .resolver(
-                        MethodValueResolver.INSTANCE,
+                        SafeMethodValueResolver.INSTANCE,
                         MapValueResolver.INSTANCE,
                         FieldValueResolver.INSTANCE,
                         JavaBeanValueResolver.INSTANCE

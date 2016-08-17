@@ -22,7 +22,7 @@
 
     {{#each packages as |package| }}
             <h2>
-                <a href="{{linkTo this}}">{{qualifiedName}}</a>
+                <a href="{{meta.pathToRoot}}{{linkTo qualifiedName}}">{{qualifiedName}}</a>
             </h2>
             <div class="row">
                 {{> _partials/package/subclasses title='Classes' items=package.ordinaryClasses }}

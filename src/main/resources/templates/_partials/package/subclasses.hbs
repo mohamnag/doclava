@@ -6,7 +6,7 @@
             {{#each items}}
                 <li class="list-group-item">
                     <h5>
-                        <a href="{{meta.pathToRoot}}{{linkTo this}}">{{ leafName }}</a>
+                        <a href="{{meta.pathToRoot}}{{linkTo qualifiedName}}">{{ leafName }}</a>
                     </h5>
                     {{> _partials/class/tag_to_text tags=comment.briefTags}}
                 </li>

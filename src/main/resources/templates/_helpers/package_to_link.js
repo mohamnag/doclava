@@ -4,7 +4,6 @@
  *
  * Created by mohamnag on 15/08/16.
  */
-
-Handlebars.registerHelper('ntl', function (context) {
-    return context.split(".").join("/");
+Handlebars.registerHelper('linkTo', function (context) {
+    return context.split(".").join("/").concat("/");
 });
