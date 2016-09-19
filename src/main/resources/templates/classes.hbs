@@ -17,13 +17,13 @@
 
     <header>
         <h1>Classes</h1>
-        <p>List of all classes in this project:</p>
     </header>
 
     <div class="container">
 
         {{#each classes as |class| }}
             <div class="row">
+                <br/>
 
                 <h3>
                     <a href="{{meta.pathToRoot}}{{linkTo qualifiedName}}">{{qualifiedName}}</a>
@@ -33,8 +33,6 @@
 
                 {{> _partials/class/class_type class=class }}
 
-                <br/>
-                <br/>
             </div>
         {{/each}}
 
