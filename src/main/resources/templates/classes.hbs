@@ -1,0 +1,44 @@
+{{> _partials/base}}
+{{!
+
+    This is an example of a meta page, evey template except the class and package page
+    is a meta page. It is rendered once and with full context of both packages and
+    root classes. These pages can be used for creating indices and so on.
+
+    Context of each meta page has two root values:
+        - classes: a sorted list of root classes as ClassInfo objects
+        - packages: a sorted list of all packages as PackageInfo objects
+
+    Meta data contained in context are:
+        - meta.pathToRoot: the path to root of the outputed HTML
+
+}}
+{{#*inline "content" }}
+
+    <header>
+        <h1>Classes</h1>
+        <p>List of all classes in this project:</p>
+    </header>
+
+    <div class="container">
+
+        {{#each classes as |class| }}
+            <div class="row">
+
+                <h3>
+                    <a href="{{meta.pathToRoot}}{{linkTo qualifiedName}}">{{qualifiedName}}</a>
+                </h3>
+
+                {{> _partials/class/class_visibility class=class }}
+
+                {{> _partials/class/class_type class=class }}
+
+                <br/>
+                <br/>
+            </div>
+        {{/each}}
+
+    </div>
+
+{{/inline}}
+
